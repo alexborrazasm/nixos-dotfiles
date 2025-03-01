@@ -31,8 +31,24 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
+      # NixOS
       nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";
       hms = "home-manager switch --flake ~/nix-config/#alex@z3phyrus";
+      nfu = "(cd ~/nix-config && nix flake update && git add flake.lock && git commit -m 'Update flake.lock' && git push)";
+
+      # fic dirs
+      fic = "cd /mnt/data/Documents/fic/2_curso/q_2";
+      lsi = "cd /mnt/data/Documents/fic/2_curso/q_1/LSI";
+      so  = "cd /mnt/data/Documents/fic/2_curso/q_1/SO";
+      ds  = "cd /mnt/data/Documents/fic/2_curso/q_1/DS";
+      md  = "cd /mnt/data/Documents/fic/2_curso/q_1/MD";
+      ec  = "cd /mnt/data/Documents/fic/2_curso/q_1/EC";
+      xp  = "cd /mnt/data/Documents/fic/2_curso/q_1/XP";
+      ac  = "cd /mnt/data/Documents/fic/2_curso/q_2/AC";
+      cpf = "cd /mnt/data/Documents/fic/2_curso/q_2/CP";
+      sc  = "cd /mnt/data/Documents/fic/2_curso/q_2/SC";
+      si  = "cd /mnt/media/data/Documents/fic/2_curso/q_2/SI";
+      dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI";
     };
   };
 
