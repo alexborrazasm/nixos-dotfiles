@@ -10,21 +10,17 @@ in {
   };
 
   config = mkIf cfg.enable {
+
     # Enable and configure Supergfxctl
     services.supergfxd = {
       enable = true;
     };
-
+    systemd.services.supergfxd.path = [ pkgs.pciutils ];
+    
     # Enable and configure Asusctl
     services.asusd = {
       enable = true;
       enableUserService = true;
-    };
-
-    # Install the necessary packages
-    environment.systemPackages = with pkgs; [
-      supergfxctl
-      asusctl
-    ];
+    }; 
   };
 }

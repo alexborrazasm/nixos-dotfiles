@@ -27,7 +27,7 @@ in {
         fira-code
         jetbrains-mono
         hack-font
-        nerd-fonts.cousine
+        nerdfonts
         
         # icons
         font-awesome
