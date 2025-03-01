@@ -72,6 +72,7 @@ in {
       nmap
       dnslookup
       tree
+      wireguard-tools
     ];
   };
 }

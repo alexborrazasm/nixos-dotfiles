@@ -37,15 +37,31 @@
     efiSupport = true;
     default = "saved";
     theme = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog";
-    #background = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog/background.png";
     gfxmodeEfi = "2560x1440,auto";
+    splashImage = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog/background.png";
     extraConfig = ''
       set save_default=true
     '';
   };
 
-  boot.plymouth.enable = true;
-  boot.kernelParams = [ "quiet" "splash" ];
+  boot = {
+    plymouth = {
+      enable = true;
+    };
+
+    # Enable "Silent Boot"
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+  };
 
   networking.hostName = "z3phyrus";
 
