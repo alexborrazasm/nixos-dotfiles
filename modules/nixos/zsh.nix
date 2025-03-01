@@ -16,24 +16,30 @@ in {
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
       ohMyZsh = {
-        enable = true;
+        enable  = true;
         plugins = [ "git" "docker" "sudo" ];
-        theme = "agnoster";
+        theme   = "agnoster";
       };
       shellAliases = {
         #bat
-        cat = "bat";
+        cat  = "bat";
         catp = "bat -p";
 
         # lsd
-        ll = "lsd -lh --group-dirs=first";
-        la = "lsd -a --group-dirs=first";
-        l = "lsd --group-dirs=first";
+        ll  = "lsd -lh --group-dirs=first";
+        la  = "lsd -a --group-dirs=first";
+        l   = "lsd --group-dirs=first";
         lla = "lsd -lha --group-dirs=first";
-        ls = "lsd --group-dirs=first";
+        ls  = "lsd --group-dirs=first";
         
         # NixOS
         ncg = "sudo nix-collect-garbage -d";
+
+        # neovim
+        vi  = "nvim";
+        vim = "nvim";
+
+        ":q" = "exit";     
       };
     };
 
