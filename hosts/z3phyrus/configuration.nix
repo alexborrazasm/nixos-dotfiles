@@ -9,7 +9,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.hardware.nixosModules.asus-zephyrus-ga402
-      nixosModules
+      nixosModules.default
     ];
 
   system.stateVersion = "24.11";

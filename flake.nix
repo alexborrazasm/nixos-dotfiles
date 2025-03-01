@@ -15,7 +15,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       
       # Import all modules from modules.nix
-      nixosModules = import ./modules/nixos/modules.nix;
+      nixosModules.default = import ./modules/nixos/modules.nix;
     in
     {
       # Expose the modules

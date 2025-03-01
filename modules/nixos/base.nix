@@ -13,6 +13,10 @@ in {
     # Set your time zone.
     time.timeZone = "Europe/Madrid";
 
+    nix.settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };    
+
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
 
