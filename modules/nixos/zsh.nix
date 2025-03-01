@@ -35,7 +35,6 @@ in {
         # NixOS
         ncg = "sudo nix-collect-garbage -d";
       };
-      history.size = 10000;
     };
 
     environment.systemPackages = with pkgs; [
