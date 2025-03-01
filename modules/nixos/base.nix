@@ -67,6 +67,7 @@ in {
       fastfetch
       nmap
       dnslookup
+      tree
     ];
   };
 }

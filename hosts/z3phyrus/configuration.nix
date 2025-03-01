@@ -36,6 +36,9 @@
     useOSProber = true;
     efiSupport = true;
     default = "saved";
+    theme = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog";
+    #background = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog/background.png";
+    gfxmodeEfi = "2560x1440,auto";
     extraConfig = ''
       set save_default=true
     '';
