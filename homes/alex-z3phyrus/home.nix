@@ -28,7 +28,13 @@
     vlc
   ];
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";
+      hms = "home-manager switch --flake ~/nix-config/#alex@z3phyrus";
+    };
+  };
 
   # Git configuration
   programs.git = {

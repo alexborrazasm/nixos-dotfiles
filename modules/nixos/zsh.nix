@@ -25,6 +25,7 @@ in {
         ls = "lsd";
         ll = "ls -l";
         la = "ls -la";
+        ncg = "sudo nix-collect-garbage -d";
       };
     };
 
