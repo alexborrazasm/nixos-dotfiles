@@ -73,6 +73,7 @@ in {
       dnslookup
       tree
       wireguard-tools
+      home-manager
     ];
   };
 }

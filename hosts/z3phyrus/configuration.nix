@@ -7,7 +7,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
       inputs.hardware.nixosModules.asus-zephyrus-ga402
       nixosModules.default
     ];
@@ -82,11 +81,4 @@
 
   # Set root's shell to zsh
   users.users.root.shell = pkgs.zsh;
-
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "alex" = import ./home.nix;
-    };
-  };
 }

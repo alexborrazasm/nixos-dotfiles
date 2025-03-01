@@ -5,8 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgsUnstable.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -31,6 +33,15 @@
           };
           modules = [
             ./hosts/z3phyrus/configuration.nix
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        "alex@z3phyrus" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ 
+            ./homes/alex-z3phyrus/home.nix
           ];
         };
       };
