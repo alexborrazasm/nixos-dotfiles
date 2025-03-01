@@ -20,6 +20,7 @@
   headset-control.enable = true;
   gnome.enable = true;
   fonts-config.enable = true;
+  nvim.enable = true;
 
   environment.systemPackages = with pkgs; [
     os-prober

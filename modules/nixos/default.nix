@@ -8,6 +8,7 @@
     ./headset-control.nix
     ./gnome.nix
     ./fonts-config.nix
+    ./nvim.nix
   ];
 
   # Default config
@@ -17,5 +18,6 @@
   asus-utils.enable = lib.mkDefault false;
   headset-control.enable = lib.mkDefault false;
   gnome.enable = lib.mkDefault false;
+  nvim.enable = lib.mkDefault true;
 }
 

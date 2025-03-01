@@ -63,7 +63,6 @@ in {
 
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
-      vim
       curl
       wget
       git
