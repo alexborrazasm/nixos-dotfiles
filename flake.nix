@@ -19,7 +19,7 @@
       pkgsUnstable = nixpkgsUnstable.legacyPackages.${system};  
       
       # Import all modules from modules.nix
-      nixosModules.default = import ./modules/nixos/modules.nix;
+      nixosModules.default = import ./modules/nixos;
     in
     {
       # Expose the modules
