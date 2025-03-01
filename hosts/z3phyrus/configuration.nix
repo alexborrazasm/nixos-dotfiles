@@ -41,6 +41,9 @@
     '';
   };
 
+  boot.plymouth.enable = true;
+  boot.kernelParams = [ "quiet" "splash" ];
+
   networking.hostName = "z3phyrus";
 
   # X11 keymap configuration

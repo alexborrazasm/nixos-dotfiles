@@ -21,7 +21,9 @@
     valgrind
     gdb
 
-   # Applications
+    discord
+
+    # Applications
     spotify
     vlc
   ];
