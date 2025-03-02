@@ -16,6 +16,7 @@
       # Development tools
       vscode
       gcc
+      gnumake
       python3
       valgrind
       gdb
