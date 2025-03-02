@@ -18,7 +18,7 @@ in {
       experimental-features = [ "nix-command" "flakes" ];
     };    
 
-    # Select internationalisation properties.
+    # Select internationalization properties.
     i18n.defaultLocale = "en_US.UTF-8";
 
     i18n.extraLocaleSettings = {
