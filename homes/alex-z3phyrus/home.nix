@@ -19,6 +19,7 @@
       python3
       valgrind
       gdb
+      jetbrains.idea-ultimate
 
       # Communication applications
       discord
