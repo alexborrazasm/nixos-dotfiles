@@ -4,6 +4,7 @@
 with lib;
 let 
   cfg = config.chrome;
+  chromeFlags = "--enable-features=TouchpadOverscrollHistoryNavigation";
 in {
   options.chrome = {
     enable = mkEnableOption "Google Chrome configuration";
@@ -12,7 +13,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = [ pkgs.google-chrome ];
 
-    # Chrome as default nav
+    # Chrome as default browser
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
@@ -23,27 +24,33 @@ in {
         "x-scheme-handler/unknown" = "google-chrome.desktop";
       };
     };
+
+    xdg.desktopEntries.google-chrome = {
+      name = "Google Chrome";
+      genericName = "Web Browser";
+      comment = "Access the Internet";
+      exec = "${pkgs.google-chrome}/bin/google-chrome-stable %U ${chromeFlags}";
+      terminal = false;
+      type = "Application";
+      icon = "google-chrome";
+      categories = [ "Network" "WebBrowser" ];
+      mimeType = [
+        "x-scheme-handler/unknown" "x-scheme-handler/about" "application/pdf"
+        "application/rdf+xml" "application/rss+xml" "application/xhtml+xml"
+        "application/xhtml_xml" "application/xml" "image/gif" "image/jpeg"
+        "image/png" "image/webp" "text/html" "text/xml" "x-scheme-handler/http"
+        "x-scheme-handler/https"
+      ];
+      actions = {
+        "new-window" = {
+          name = "New Window";
+          exec = "${pkgs.google-chrome}/bin/google-chrome-stable ${chromeFlags}";
+        };
+        "new-private-window" = {
+          name = "New Incognito Window";
+          exec = "${pkgs.google-chrome}/bin/google-chrome-stable --incognito ${chromeFlags}";
+        };
+      };
+    };
   };
-
-  home.file.".local/share/applications/google-chrome.desktop".text = ''
-    [Desktop Entry]
-    Version=1.0
-    Name=Google Chrome
-    Exec=/usr/bin/google-chrome-stable %U --enable-features=TouchpadOverscrollHistoryNavigation
-    StartupNotify=true
-    Terminal=false
-    Icon=google-chrome
-    Type=Application
-    Categories=Network;WebBrowser;
-    Actions=new-window;new-private-window;
-
-    [Desktop Action new-window]
-    Name=New Window
-    Exec=/usr/bin/google-chrome-stable --enable-features=TouchpadOverscrollHistoryNavigation
-
-    [Desktop Action new-private-window]
-    Name=New Incognito Window
-    Exec=/usr/bin/google-chrome-stable --incognito --enable-features=TouchpadOverscrollHistoryNavigation 
-    MimeType=x-scheme-handler/unknown;x-scheme-handler/about;application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
-  '';
 }
