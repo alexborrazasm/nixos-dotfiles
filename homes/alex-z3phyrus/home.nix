@@ -20,6 +20,8 @@
       valgrind
       gdb
       jetbrains.idea-ultimate
+      openmpi 
+      openmpi.dev
 
       # Communication applications
       discord
