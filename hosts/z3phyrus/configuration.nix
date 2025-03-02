@@ -16,28 +16,28 @@
     os-prober
     ntfs3g
   ];
-  
-  boot.loader.systemd-boot.enable = false;  # Diasable systemd-boot
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    useOSProber = true;
-    efiSupport = true;
-    default = "saved";
-    theme = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog";
-    gfxmodeEfi = "2560x1440,auto";
-    splashImage = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog/background.png";
-    extraConfig = ''
-      set save_default=true
-    '';
-  };
 
   boot = {
-    plymouth = {
-      enable = true;
+    loader = {
+      systemd-boot.enable = false;  # Disable systemd-boot
+      efi.canTouchEfiVariables = true;
+      
+      grub = {
+        enable = true;
+        device = "nodev";
+        useOSProber = true;
+        efiSupport = true;
+        default = "saved";
+        theme = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog";
+        gfxmodeEfi = "2560x1440,auto";
+        splashImage = "/home/alex/nix-config/hosts/z3phyrus/grub/themes/min_rog/background.png";
+        extraConfig = ''
+          set save_default=true
+        '';
+      };
     };
+
+    plymouth.enable = true;
 
     # Enable "Silent Boot"
     consoleLogLevel = 0;
