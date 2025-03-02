@@ -60,6 +60,7 @@
             ./modules/home-manager
             {
               git.enable = true;
+              chrome.enable = true;
             }
           ];
         };

@@ -29,7 +29,7 @@
     ];
   };
 
-  # Zsh configuration
+  # Zsh local configuration
   programs.zsh = {
     enable = true;
     shellAliases = {
