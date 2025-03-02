@@ -11,13 +11,15 @@
     ./nvim.nix
   ];
 
-  # Default config
+  # Default true
   base.enable = lib.mkDefault true;
-  zsh.enable = lib.mkDefault false;
-  fonts-config.enable = lib.mkDefault false;
+  zsh.enable = lib.mkDefault true;
+  fonts-config.enable = lib.mkDefault true;
+  nvim.enable = lib.mkDefault true;
+  
+  # Default false
   asus-utils.enable = lib.mkDefault false;
   headset-control.enable = lib.mkDefault false;
-  gnome.enable = lib.mkDefault false;
-  nvim.enable = lib.mkDefault true;
+  gnome.enable = lib.mkDefault true;
 }
 

@@ -8,19 +8,9 @@
     [
       ./hardware-configuration.nix
       inputs.hardware.nixosModules.asus-zephyrus-ga402
-      nixosModules.default
     ];
 
   system.stateVersion = "24.11";
-
-  # Custom modules
-  base.enable = true;
-  zsh.enable = true;
-  asus-utils.enable = true;
-  headset-control.enable = true;
-  gnome.enable = true;
-  fonts-config.enable = true;
-  nvim.enable = true;
 
   environment.systemPackages = with pkgs; [
     os-prober
