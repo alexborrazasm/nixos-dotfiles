@@ -2,10 +2,10 @@
 
 {
   imports = [
-    #TODO
+    ./git.nix
   ];
 
   # Default config
-  #some.enable = lib.mkDefault bool;
+  git.enable = lib.mkDefault false;
 }
 

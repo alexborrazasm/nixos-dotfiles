@@ -15,8 +15,20 @@
   outputs = { self, nixpkgs, nixpkgsUnstable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      pkgsUnstable = nixpkgsUnstable.legacyPackages.${system};  
+      
+      pkgsConfig = {
+        allowUnfree = true;
+      };
+      
+      pkgs = import nixpkgs {
+        inherit system;
+        config = pkgsConfig;
+      };
+      
+      pkgsUnstable = import nixpkgsUnstable {
+        inherit system;
+        config = pkgsConfig;
+      };
     in
     {
       nixosConfigurations = {
@@ -39,14 +51,15 @@
 
       homeConfigurations = {
         "alex@z3phyrus" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
           extraSpecialArgs = {
-            inherit inputs pkgs pkgsUnstable;
+            inherit pkgs pkgsUnstable;
           };
           modules = [ 
             ./homes/alex-z3phyrus/home.nix
             ./modules/home-manager
             {
-
+              git.enable = true;
             }
           ];
         };

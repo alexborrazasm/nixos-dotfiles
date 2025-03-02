@@ -1,42 +1,43 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Home Manager configuration
-  home.username = "alex";
-  home.homeDirectory = "/home/alex";
-  home.stateVersion = "24.11";
-
-  # Let Home Manager install and manage itself
+  # Enable Home Manager to manage itself
   programs.home-manager.enable = true;
 
-  # Allow unfree packages in home-manager
-  nixpkgs.config.allowUnfree = true;
+  # Basic Home Manager configuration
+  home = {
+    username = "alex";
+    homeDirectory = "/home/alex";
+    stateVersion = "24.11";
+    
+    # Packages to install
+    packages = with pkgs; [
+      # Development tools
+      vscode
+      gcc
+      python3
+      valgrind
+      gdb
 
-  # Packages to install
-  home.packages = with pkgs; [
-    # Development tools
-    vscode
-    gcc
-    python3
-    valgrind
-    gdb
+      # Communication applications
+      discord
 
-    discord
+      # Multimedia applications
+      spotify
+      vlc
+    ];
+  };
 
-    # Applications
-    spotify
-    vlc
-  ];
-
+  # Zsh configuration
   programs.zsh = {
     enable = true;
     shellAliases = {
-      # NixOS
+      # Aliases for NixOS and Home Manager management
       nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";
       hms = "home-manager switch --flake ~/nix-config/#alex@z3phyrus";
       nfu = "(cd ~/nix-config && nix flake update && git add flake.lock && git commit -m 'Update flake.lock' && git push)";
 
-      # fic dirs
+      # Aliases for university course directories
       fic = "cd /mnt/data/Documents/fic/2_curso/q_2";
       lsi = "cd /mnt/data/Documents/fic/2_curso/q_1/LSI";
       so  = "cd /mnt/data/Documents/fic/2_curso/q_1/SO";
@@ -52,21 +53,7 @@
     };
   };
 
-  # Git configuration
-  programs.git = {
-    enable = true;
-    userName = "alexborrazasm";
-    userEmail = "alexborrazasm@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-  };
-
-  home.sessionVariables = {
-    EDITOR = "vim";
-  };
-
-  # Direnv for per-directory environment variables
+  # Direnv configuration for per-directory environment variables
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
