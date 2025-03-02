@@ -1,3 +1,4 @@
+# modules/nixos/gnome.nix
 { config, pkgs, lib, ... }:
 
 with lib;

@@ -1,3 +1,4 @@
+# modules/nixos/headset-control.nix
 { config, pkgs, lib, ... }:
 
 with lib;

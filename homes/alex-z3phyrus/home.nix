@@ -1,3 +1,4 @@
+# homes/alex-z3phyrus/home.nix
 { config, pkgs, inputs, ... }:
 
 {

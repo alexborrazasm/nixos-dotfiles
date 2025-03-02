@@ -1,3 +1,4 @@
+# modules/nixos/fonts-config.nix
 { config, pkgs, lib, ... }:
 
 with lib;

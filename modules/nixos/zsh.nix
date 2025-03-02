@@ -1,3 +1,4 @@
+# modules/nixos/zsh.nix
 { config, pkgs, lib, ... }:
 
 with lib;

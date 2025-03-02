@@ -1,3 +1,4 @@
+# modules/nixos/base.nix
 { config, pkgs, lib, ... }:
 
 with lib;

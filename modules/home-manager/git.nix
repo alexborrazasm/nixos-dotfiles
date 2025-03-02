@@ -1,3 +1,4 @@
+# modules/home-manager/git.nix
 { config, pkgs, lib, ... }:
 
 with lib;

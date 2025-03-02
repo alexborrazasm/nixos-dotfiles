@@ -1,3 +1,4 @@
+# modules/nixos/nvim.nix
 { config, lib, pkgs, ... }:
 
 with lib;
