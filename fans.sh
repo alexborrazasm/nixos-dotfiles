@@ -10,8 +10,8 @@ asusctl fan-curve -m quiet -D 0c:16%,20c:16%,40c:16%,60c:20%,70c:40%,80c:80%,90c
 
 # Set fan curves for BALANCED profile
 echo "Setting fan curves for BALANCED profile..."
-asusctl fan-curve -m balanced -D 0c:20%,20c:20%,40c:20%,60c:50%,70c:65%,80c:80%,90c:100%,100c:100% -e true -f cpu
-asusctl fan-curve -m balanced -D 0c:20%,20c:20%,40c:20%,60c:50%,70c:65%,80c:80%,90c:100%,100c:100% -e true -f gpu
+asusctl fan-curve -m balanced -D 0c:16%,16c:16%,40c:16%,60c:35%,70c:55%,80c:80%,90c:100%,100c:100% -e true -f cpu
+asusctl fan-curve -m balanced -D 0c:16%,16c:16%,40c:16%,60c:35%,70c:55%,80c:80%,90c:100%,100c:100% -e true -f gpu
 
 # Set fan curves for PERFORMANCE profile
 echo "Setting fan curves for PERFORMANCE profile..."
