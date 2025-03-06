@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"cSpell.words": [
+			"asusctl",
 			"agnoster",
 			"alex",
 			"alexborrazasm",
@@ -39,6 +40,7 @@
 			"keymap",
 			"linux",
 			"loglevel",
+			"Monokai",
 			"neovim",
 			"nerdfonts",
 			"networkmanager",
@@ -76,6 +78,7 @@
 			"webp",
 			"xhci",
 			"zephyrus"
-		]
+		],
+		"workbench.colorTheme": "Monokai",
 	}
 }
