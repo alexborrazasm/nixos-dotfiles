@@ -22,32 +22,9 @@ in {
         theme   = "agnoster";
       };
       shellAliases = {
-        #bat
-        cat  = "bat";
-        catp = "bat -p";
-
-        # lsd
-        ll  = "lsd -lh --group-dirs=first";
-        la  = "lsd -a --group-dirs=first";
-        l   = "lsd --group-dirs=first";
-        lla = "lsd -lha --group-dirs=first";
-        ls  = "lsd --group-dirs=first";
-        
-        # NixOS
-        ncg = "sudo nix-collect-garbage -d";
-
-        # neovim
-        vi  = "nvim";
-        vim = "nvim";
-
         ":q" = "exit";     
       };
     };
-
-    environment.systemPackages = with pkgs; [
-      bat
-      lsd
-    ];
   };
 }
 

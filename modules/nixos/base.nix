@@ -64,15 +64,13 @@ in {
 
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
+      vim
       curl
       wget
       git
       htop
       fastfetch
-      nmap
-      dnslookup
       tree
-      wireguard-tools
       home-manager
     ];
   };

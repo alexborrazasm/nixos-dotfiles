@@ -23,6 +23,7 @@
       jetbrains.idea-ultimate
       openmpi 
       openmpi.dev
+      erlang
 
       # Communication applications
       discord
@@ -30,6 +31,11 @@
       # Multimedia applications
       spotify
       vlc
+
+      # Networking tools
+      nmap
+      dnslookup
+      wireguard-tools
     ];
   };
 
@@ -37,10 +43,11 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      # Aliases for NixOS and Home Manager management
-      nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";
-      hms = "home-manager switch --flake ~/nix-config/#alex@z3phyrus";
-      nfu = "(cd ~/nix-config && nix flake update && git add flake.lock && git commit -m 'Update flake.lock' && git push)";
+        # Aliases for NixOS and Home Manager management
+        nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";
+        hms = "home-manager switch --flake ~/nix-config/#alex@z3phyrus";
+        nfu = "(cd ~/nix-config && nix flake update && git add flake.lock && git commit -m 'Update flake.lock' && git push)";
+        ncg = "sudo nix-collect-garbage -d";
 
       # Aliases for university course directories
       fic = "cd /mnt/data/Documents/fic/2_curso/q_2";

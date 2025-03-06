@@ -61,6 +61,8 @@
             {
               git.enable = true;
               chrome.enable = true;
+              zsh.enable = true;
+              nvim.enable = true;
             }
           ];
         };
