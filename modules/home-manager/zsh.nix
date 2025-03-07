@@ -18,11 +18,11 @@ in {
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" ];
+        plugins = [ "git" "docker" "sudo"];
         theme = "agnoster";
       };
       shellAliases = {
-                # bat
+        # bat
         cat  = "bat";
         catp = "bat -p";
 
