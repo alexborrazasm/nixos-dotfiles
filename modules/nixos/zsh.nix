@@ -18,7 +18,7 @@ in {
       syntaxHighlighting.enable = true;
       ohMyZsh = {
         enable  = true;
-        plugins = [ "git" "docker" "sudo" ];
+        plugins = [ "git" ];
         theme   = "agnoster";
       };
       shellAliases = {
