@@ -1,3 +1,4 @@
+#modules/home-manager/nvim.nix
 { config, lib, pkgs, ... }:
 
 with lib;
