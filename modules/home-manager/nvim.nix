@@ -16,10 +16,10 @@ in {
       defaultEditor = true;
       
       extraConfig = ''
-        "augroup cursor_reset
-        "  autocmd!
-        "  autocmd VimLeave * set guicursor=a:ver25
-        "augroup END
+        augroup cursor_reset
+          autocmd!
+          autocmd VimLeave * set guicursor=a:ver25
+        augroup END
 
         " Use spaces
         set expandtab

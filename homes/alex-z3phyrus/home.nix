@@ -43,7 +43,7 @@
   programs.zsh = {
     enable = true;
     # PATH to custom themes
-    custom = "${homeconfig}/nix-config/zsh-custom-themes/";
+    custom = "${config.home.homeDirectory}/nix-config/zsh-custom-themes/";
     shellAliases = {
         # Aliases for NixOS and Home Manager management
         nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";

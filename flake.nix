@@ -66,6 +66,21 @@
             }
           ];
         };
+        "wsl" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit pkgs pkgsUnstable;
+          };
+          modules = [ 
+            ./homes/wsl
+            ./modules/home-manager
+            {
+              git.enable = true;
+              zsh.enable = true;
+              nvim.enable = true;
+            }
+          ];
+        };
       };
     };
 }

@@ -19,7 +19,8 @@ in {
       oh-my-zsh = {
         enable = true;
         plugins = [ "git" "docker" "sudo" ];
-        # PATH to custom theme defined in home.nix
+        # PATH to custom themes
+        custom = "${config.home.homeDirectory}/nix-config/zsh-custom-themes/";
         theme = "agnoster-nix";
       };
       plugins = [
