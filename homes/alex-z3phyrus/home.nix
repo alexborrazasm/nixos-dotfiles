@@ -24,6 +24,7 @@
       openmpi 
       openmpi.dev
       erlang
+      jdk
 
       # Communication applications
       discord
