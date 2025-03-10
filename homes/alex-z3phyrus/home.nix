@@ -62,7 +62,7 @@
       ac  = "cd /mnt/data/Documents/fic/2_curso/q_2/AC";
       cpf = "cd /mnt/data/Documents/fic/2_curso/q_2/CP";
       sc  = "cd /mnt/data/Documents/fic/2_curso/q_2/SC";
-      si  = "cd /mnt/media/data/Documents/fic/2_curso/q_2/SI";
+      si  = "cd /mnt/data/Documents/fic/2_curso/q_2/SI";
       dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI";
     };
   };
