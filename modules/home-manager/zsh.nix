@@ -52,11 +52,16 @@ in {
 
         ":q" = "exit";     
       };
+      initExtra = ''
+        source "$(fzf-share)/key-bindings.zsh"
+        source "$(fzf-share)/completion.zsh"
+      '';
     };
 
     home.packages = with pkgs; [
       bat
       lsd
+      fzf
     ];
  };
 }
