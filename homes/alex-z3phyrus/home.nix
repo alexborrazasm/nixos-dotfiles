@@ -25,6 +25,10 @@
       openmpi.dev
       erlang
       jdk
+      rlwrap
+      
+      # Alacritty
+      alacritty
 
       # Communication applications
       discord
