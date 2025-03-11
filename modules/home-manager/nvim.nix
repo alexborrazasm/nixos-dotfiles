@@ -35,6 +35,11 @@ in {
       '';
     };
 
+    home.packages = with pkgs; [
+      wl-clipboard
+      xclip
+    ];
+    
     home.sessionVariables = {
       EDITOR = "nvim";
     };
