@@ -37,7 +37,7 @@
             inherit inputs pkgsUnstable;
           };
           modules = [
-            ./hosts/z3phyrus/configuration.nix
+            ./hosts/z3phyrus
             ./modules/nixos 
             { 
               # Enable optional modules
@@ -56,7 +56,7 @@
             inherit pkgs pkgsUnstable;
           };
           modules = [ 
-            ./homes/alex-z3phyrus/home.nix
+            ./homes/alex-z3phyrus
             ./modules/home-manager
             {
               git.enable = true;
