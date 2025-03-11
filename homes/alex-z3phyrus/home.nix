@@ -24,6 +24,11 @@
       openmpi 
       openmpi.dev
       erlang
+      jdk
+      rlwrap
+      
+      # Alacritty
+      alacritty
 
       # Communication applications
       discord
@@ -42,8 +47,6 @@
   # Zsh local configuration
   programs.zsh = {
     enable = true;
-    # PATH to custom themes
-    custom = "${config.home.homeDirectory}/nix-config/zsh-custom-themes/";
     shellAliases = {
         # Aliases for NixOS and Home Manager management
         nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";
@@ -62,7 +65,7 @@
       ac  = "cd /mnt/data/Documents/fic/2_curso/q_2/AC";
       cpf = "cd /mnt/data/Documents/fic/2_curso/q_2/CP";
       sc  = "cd /mnt/data/Documents/fic/2_curso/q_2/SC";
-      si  = "cd /mnt/media/data/Documents/fic/2_curso/q_2/SI";
+      si  = "cd /mnt/data/Documents/fic/2_curso/q_2/SI";
       dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI";
     };
   };
