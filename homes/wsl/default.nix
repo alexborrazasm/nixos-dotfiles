@@ -43,6 +43,7 @@
       source ~/.nix-profile/etc/profile.d/nix.sh
     '';
     shellAliases = {
+        sudo = "sudo -E env PATH=$HOME/alex/.nix-profile/bin:$PATH"
         # Aliases for NixOS and Home Manager management
         hms = "nix run home-manager/release-24.11 -- switch --flake ~/nix-config/#wsl";
         nfu = "(cd ~/nix-config && nix flake update && git add flake.lock && git commit -m 'Update flake.lock' && git push)";
