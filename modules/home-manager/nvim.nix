@@ -19,19 +19,14 @@ in {
           pattern = "*",
           command = "set guicursor=a:ver25"
         })
-         
-       	vim.g.clipboard = {
-       	  name = "WslClipboard",
-          copy = {
-            ["+"] = "clip.exe",
-            ["*"] = "clip.exe",
-          },
-          paste = {
-            ["+"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
-            ["*"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
-          },
-          cache_enabled = 0,
-        }
+
+        -- System clipboard shortcuts 
+        vim.keymap.set("n", "<Space>y", '"+y', { noremap = true, silent = true })
+        vim.keymap.set("v", "<Space>y", '"+y', { noremap = true, silent = true })
+        vim.keymap.set("x", "<Space>y", '"+y', { noremap = true, silent = true })
+        vim.keymap.set("n", "<Space>d", '"+d', { noremap = true, silent = true })
+        vim.keymap.set("v", "<Space>d", '"+d', { noremap = true, silent = true })
+        vim.keymap.set("x", "<Space>d", '"+d', { noremap = true, silent = true })
 
         -- Use spaces
         vim.opt.expandtab = true
