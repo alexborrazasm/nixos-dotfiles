@@ -1,4 +1,4 @@
-# homes/alex-z3phyrus/home.nix
+# homes/wsl/default.nix
 { config, pkgs, inputs, ... }:
 
 {
@@ -50,6 +50,22 @@
       ncg = "sudo nix-collect-garbage -d";
     };
   };
+
+  # nvim clipboard in WSL
+  programs.neovim.extraLuaConfig = ''
+    vim.g.clipboard = {
+      name = "WslClipboard",
+      copy = {
+        ["+"] = "clip.exe",
+        ["*"] = "clip.exe",
+      },
+      paste = {
+        ["+"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+        ["*"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+      },
+      cache_enabled = 0,
+    }
+  '';
 
   # Direnv configuration for per-directory environment variables
   programs.direnv = {

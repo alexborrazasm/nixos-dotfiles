@@ -1,4 +1,4 @@
-# homes/alex-z3phyrus/home.nix
+# homes/alex-z3phyrus/default.nix
 { config, pkgs, inputs, ... }:
 
 {

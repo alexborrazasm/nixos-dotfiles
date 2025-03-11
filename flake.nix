@@ -72,7 +72,7 @@
             inherit pkgs pkgsUnstable;
           };
           modules = [ 
-            ./homes/wsl
+            ./homes/alex-wsl
             ./modules/home-manager
             {
               git.enable = true;

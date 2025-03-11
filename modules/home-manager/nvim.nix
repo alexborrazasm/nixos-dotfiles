@@ -1,37 +1,48 @@
 #modules/home-manager/nvim.nix
-{ config, lib, pkgs, ... }:
-
-with lib;
-
+{ config, pkgs, lib, ... }:
 let
   cfg = config.nvim;
 in {
   options.nvim = {
-    enable = mkEnableOption "neovim configuration";
+    enable = lib.mkEnableOption "neovim configuration";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     programs.neovim = {
       enable = true;
       defaultEditor = true;
-      
-      extraConfig = ''
-        augroup cursor_reset
-          autocmd!
-          autocmd VimLeave * set guicursor=a:ver25
-        augroup END
 
-        " Use spaces
-        set expandtab
-        " 2 spaces
-        set tabstop=2
-        set shiftwidth=2
-        set softtabstop=2
+      extraLuaConfig = ''
+        vim.api.nvim_create_augroup("cursor_reset", { clear = true })
+        vim.api.nvim_create_autocmd("VimLeave", {
+          group = "cursor_reset",
+          pattern = "*",
+          command = "set guicursor=a:ver25"
+        })
+         
+       	vim.g.clipboard = {
+       	  name = "WslClipboard",
+          copy = {
+            ["+"] = "clip.exe",
+            ["*"] = "clip.exe",
+          },
+          paste = {
+            ["+"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+            ["*"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+          },
+          cache_enabled = 0,
+        }
 
-        syntax on
+        -- Use spaces
+        vim.opt.expandtab = true
+        -- 2 spaces
+        vim.opt.tabstop = 2
+        vim.opt.shiftwidth = 2
+        vim.opt.softtabstop = 2
 
-        set number
-        set relativenumber
+        vim.opt.syntax = "on"
+        vim.opt.number = true
+        vim.opt.relativenumber = true
       '';
     };
 

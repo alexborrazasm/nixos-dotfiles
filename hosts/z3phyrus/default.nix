@@ -1,4 +1,4 @@
-# hosts/z3phyrus/configuration.nix
+# hosts/z3phyrus/default.nix
 { config, pkgs, inputs, nixosModules , ... }:
 
 {
