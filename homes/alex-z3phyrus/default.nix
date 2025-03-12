@@ -25,6 +25,8 @@
       openmpi.dev
       erlang
       jdk
+
+      # Utils
       rlwrap
       
       # Alacritty

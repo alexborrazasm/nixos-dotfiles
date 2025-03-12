@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     os-prober
     ntfs3g
+    linuxPackages.cpupower
   ];
 
   boot = {
@@ -48,6 +49,8 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      # Disable turbo boost 
+      "amd_pstate=passive" 
     ];
   };
 
