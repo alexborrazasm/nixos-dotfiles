@@ -63,6 +63,7 @@
               chrome.enable = true;
               zsh.enable = true;
               nvim.enable = true;
+              alacritty.enable = true;
             }
           ];
         };

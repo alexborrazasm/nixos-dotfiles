@@ -7,6 +7,7 @@
     ./chrome.nix
     ./zsh.nix
     ./nvim.nix
+    ./alacritty.nix
   ];
 
   # Default config
@@ -14,5 +15,6 @@
   chrome.enable = lib.mkDefault false;
   zsh.enable = lib.mkDefault false;
   nvim.enable = lib.mkDefault false;
+  alacritty.enable = lib.mkDefault false;
 }
 

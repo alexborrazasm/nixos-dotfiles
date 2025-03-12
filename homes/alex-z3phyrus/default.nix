@@ -29,9 +29,6 @@
       # Utils
       rlwrap
       
-      # Alacritty
-      alacritty
-
       # Communication applications
       discord
 
