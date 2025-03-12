@@ -27,6 +27,11 @@ in {
         vim.keymap.set("n", "<Space>d", '"+d', { noremap = true, silent = true })
         vim.keymap.set("v", "<Space>d", '"+d', { noremap = true, silent = true })
         vim.keymap.set("x", "<Space>d", '"+d', { noremap = true, silent = true })
+        vim.keymap.set("n", "<Space>p", '"+p', { noremap = true, silent = true })
+        vim.keymap.set("n", "<Space>P", '"+P', { noremap = true, silent = true })
+        vim.keymap.set("v", "<Space>p", '"+p', { noremap = true, silent = true })
+        vim.keymap.set("v", "<Space>P", '"+P', { noremap = true, silent = true })
+
 
         -- Use spaces
         vim.opt.expandtab = true
