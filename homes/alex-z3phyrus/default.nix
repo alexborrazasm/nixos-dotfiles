@@ -47,8 +47,6 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      sudo = "sudo -E";
-
       # Aliases for NixOS and Home Manager management
       nrs = "sudo nixos-rebuild switch --flake ~/nix-config/#z3phyrus";
       hms = "home-manager switch --flake ~/nix-config/#alex@z3phyrus";
