@@ -49,7 +49,7 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      # Disable turbo boost 
+      # More conservative cpu freq 
       "amd_pstate=passive" 
     ];
   };

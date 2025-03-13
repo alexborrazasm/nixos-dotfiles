@@ -63,6 +63,7 @@
 			"pipewire",
 			"pkgs",
 			"plymouth",
+			"pstate",
 			"pulseaudio",
 			"relativenumber",
 			"rtkit",
