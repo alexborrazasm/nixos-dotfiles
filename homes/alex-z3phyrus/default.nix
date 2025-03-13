@@ -28,6 +28,10 @@
 
       # Utils
       rlwrap
+      zip
+      unzip
+      xz
+      unrar
       
       # Communication applications
       discord
