@@ -14,6 +14,7 @@
     os-prober
     ntfs3g
     linuxPackages.cpupower
+    cpuid
   ];
 
   boot = {
