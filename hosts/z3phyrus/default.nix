@@ -15,6 +15,8 @@
     ntfs3g
     linuxPackages.cpupower
     cpuid
+    pkgs.linuxPackages_latest.perf
+    papi
   ];
 
   boot = {
