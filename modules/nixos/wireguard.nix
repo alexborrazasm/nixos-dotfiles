@@ -22,7 +22,7 @@ in {
 
     networking.wg-quick.interfaces.wg0 = {
       autostart = true;
-      configFile = "/etc/wireguard/wg0.conf";  # Asegúrate de que el archivo existe
+      configFile = "/etc/wireguard/wg0.conf";
     };
   };
 }

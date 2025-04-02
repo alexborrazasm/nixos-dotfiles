@@ -44,6 +44,7 @@
       # Networking tools
       nmap
       dnslookup
+      traceroute
     ];
   };
 
