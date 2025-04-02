@@ -71,6 +71,7 @@ in {
       htop
       fastfetch
       tree
+      lm_sensors
       home-manager
     ];
   };
