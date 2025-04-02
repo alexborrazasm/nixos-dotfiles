@@ -16,7 +16,6 @@
     linuxPackages.cpupower
     cpuid
     pkgs.linuxPackages_latest.perf
-    papi
   ];
 
   boot = {

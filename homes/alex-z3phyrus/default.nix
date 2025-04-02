@@ -25,7 +25,8 @@
       openmpi.dev
       erlang
       jdk
-
+      papi
+    
       # Utils
       rlwrap
       zip
