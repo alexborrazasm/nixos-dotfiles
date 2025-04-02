@@ -70,6 +70,12 @@ in {
       };
     };
 
+    home.sessionVariables = {
+      XCURSOR_THEME = "Adwaita";
+      XCURSOR_SIZE = "24";      
+      GDK_BACKEND = "wayland";  
+    };
+
     home.packages = with pkgs; [
       alacritty
     ];
