@@ -69,13 +69,14 @@
       cpf = "cd /mnt/data/Documents/fic/2_curso/q_2/CP";
       sc  = "cd /mnt/data/Documents/fic/2_curso/q_2/SC";
       si  = "cd /mnt/data/Documents/fic/2_curso/q_2/SI";
-      dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI";
-      
+      dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI"; 
+    };
+    initExtra = ''
       # Alacritty bug
       export XCURSOR_THEME=Adwaita
-    };
+    '';
   };
-
+ 
   # Direnv configuration for per-directory environment variables
   programs.direnv = {
     enable = true;
