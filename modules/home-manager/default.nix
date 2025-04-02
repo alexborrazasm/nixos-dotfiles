@@ -1,6 +1,8 @@
 # modules/home-manager/default.nix
 { lib, ... }:
 
+with lib;
+
 {
   imports = [
     ./git.nix
@@ -11,10 +13,10 @@
   ];
 
   # Default config
-  git.enable = lib.mkDefault false;
-  chrome.enable = lib.mkDefault false;
-  zsh.enable = lib.mkDefault false;
-  nvim.enable = lib.mkDefault false;
-  alacritty.enable = lib.mkDefault false;
+  git.enable = mkDefault false;
+  chrome.enable = mkDefault false;
+  zsh.enable = mkDefault false;
+  nvim.enable = mkDefault false;
+  alacritty.enable = mkDefault false;
 }
 

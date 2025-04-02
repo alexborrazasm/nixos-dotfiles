@@ -70,7 +70,6 @@ in {
       };
     };
 
-    # Asegúrate de que el paquete esté instalado
     home.packages = with pkgs; [
       alacritty
     ];

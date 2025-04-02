@@ -44,6 +44,7 @@
               gnome.enable = true;
               asus-utils.enable = true;
               headset-control.enable = true;
+              wireguard.enable = true;
             }
           ];
         };

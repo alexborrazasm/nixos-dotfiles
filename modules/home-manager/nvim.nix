@@ -1,13 +1,16 @@
 #modules/home-manager/nvim.nix
 { config, pkgs, lib, ... }:
+
+with lib;
+
 let
   cfg = config.nvim;
 in {
   options.nvim = {
-    enable = lib.mkEnableOption "neovim configuration";
+    enable = mkEnableOption "neovim configuration";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     programs.neovim = {
       enable = true;
       defaultEditor = true;

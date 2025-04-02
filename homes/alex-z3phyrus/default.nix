@@ -44,7 +44,6 @@
       # Networking tools
       nmap
       dnslookup
-      wireguard-tools
     ];
   };
 
@@ -73,8 +72,8 @@
       dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI"; 
     };
     initExtra = ''
-      # Alacritty bug
-      export XCURSOR_THEME=Adwaita
+      # for ssh
+      export TERM=xterm-256color
     '';
   };
  

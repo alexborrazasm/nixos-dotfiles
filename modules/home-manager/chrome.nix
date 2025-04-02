@@ -2,6 +2,7 @@
 { config, lib, pkgs, ... }:
 
 with lib;
+
 let 
   cfg = config.chrome;
   chromeFlags = "--enable-features=TouchpadOverscrollHistoryNavigation";

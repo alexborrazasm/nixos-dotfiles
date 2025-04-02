@@ -53,6 +53,7 @@
       "udev.log_priority=3"
       # More conservative cpu freq 
       "amd_pstate=passive" 
+      "ipv6.disable=1"
     ];
   };
 
