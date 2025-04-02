@@ -1,4 +1,4 @@
-# modules/nix-os/wireguard.nix
+# modules/nixos/wireguard.nix
 { config, pkgs, lib, ... }:
 
 with lib;

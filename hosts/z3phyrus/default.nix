@@ -51,12 +51,13 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      # More conservative cpu freq 
+      # Desactiva Turbo Boost
+      "amd_pstate.enable_boost=0"
       "amd_pstate=passive" 
       "ipv6.disable=1"
     ];
   };
-
+  
   networking.hostName = "z3phyrus";
 
   # X11 keymap configuration
