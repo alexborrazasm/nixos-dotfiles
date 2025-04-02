@@ -70,6 +70,9 @@
       sc  = "cd /mnt/data/Documents/fic/2_curso/q_2/SC";
       si  = "cd /mnt/data/Documents/fic/2_curso/q_2/SI";
       dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI";
+      
+      // Alacritty bug
+      export XCURSOR_THEME=Adwaita
     };
   };
 
