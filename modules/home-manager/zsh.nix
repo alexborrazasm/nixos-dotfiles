@@ -55,6 +55,10 @@ in {
       initExtra = ''
         source "$(fzf-share)/key-bindings.zsh"
         source "$(fzf-share)/completion.zsh"
+        # gcc libs HM
+        export CPATH=$HOME/.nix-profile/include:$CPATH
+        export LIBRARY_PATH=$HOME/.nix-profile/lib:$LIBRARY_PATH
+        export LD_LIBRARY_PATH=$HOME/.nix-profile/lib:$LD_LIBRARY_PATH
       '';
     };
 
