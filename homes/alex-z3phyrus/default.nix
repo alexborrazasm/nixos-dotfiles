@@ -26,6 +26,8 @@
       erlang
       jdk
       papi
+      numactl
+      gnuplot
     
       # Utils
       rlwrap
