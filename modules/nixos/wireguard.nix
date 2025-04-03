@@ -24,11 +24,5 @@ in {
       autostart = true;
       configFile = "/etc/wireguard/wg0.conf";
     };
-
-    networking.nameservers = [
-      "192.168.9.150"  # DNS HOME 
-      "1.1.1.1"        # DNS Google
-      "8.8.8.8"        # DNS Cloudflare
-    ];
   };
 }
