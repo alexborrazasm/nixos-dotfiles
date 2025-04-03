@@ -17,6 +17,8 @@
     cpuid
     pkgs.linuxPackages_latest.perf
   ];
+  
+  powerManagement.cpufreq.max = 3200000; 
 
   boot = {
     loader = {
@@ -51,9 +53,6 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      # Desactiva Turbo Boost
-      "amd_pstate.enable_boost=0"
-      "amd_pstate=passive" 
       "ipv6.disable=1"
     ];
   };

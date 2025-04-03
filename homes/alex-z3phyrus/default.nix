@@ -43,7 +43,7 @@
 
       # Networking tools
       nmap
-      dnslookup
+      dnsutils
       traceroute
     ];
   };
