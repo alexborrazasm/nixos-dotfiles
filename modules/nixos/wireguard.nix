@@ -7,7 +7,7 @@ let
   cfg = config.wireguard;
 in {
   options.wireguard = {
-    enable = mkEnableOption "Alacritty configuration";
+    enable = mkEnableOption "Wireguard configuration";
   };
   
   config = mkIf cfg.enable {
@@ -24,5 +24,11 @@ in {
       autostart = true;
       configFile = "/etc/wireguard/wg0.conf";
     };
+
+    networking.nameservers = [
+      "192.168.9.150"  # DNS HOME 
+      "1.1.1.1"        # DNS Google
+      "8.8.8.8"        # DNS Cloudflare
+    ];
   };
 }

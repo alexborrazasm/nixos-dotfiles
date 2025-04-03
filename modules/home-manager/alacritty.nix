@@ -41,12 +41,12 @@ in {
         # Tu tema personalizado
         colors = {
           primary = {
-            background = "#1e1e1e";
+            background = "#000000";
             foreground = "#ffffff";
           };
           
           normal = {
-            black = "#171421";
+            black = "#000000";
             red = "#c01c28";
             green = "#26a269";
             yellow = "#a2734c";
