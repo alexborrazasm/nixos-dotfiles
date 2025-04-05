@@ -45,6 +45,7 @@
               asus-utils.enable = true;
               headset-control.enable = true;
               wireguard.enable = true;
+              platformio-udev.enable = true;
             }
           ];
         };

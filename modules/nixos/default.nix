@@ -12,6 +12,7 @@ with lib;
     ./gnome.nix
     ./fonts-config.nix
     ./wireguard.nix
+    ./platformio-udev.nix
   ];
 
   # Default true
@@ -22,7 +23,9 @@ with lib;
   # Default false
   asus-utils.enable = mkDefault false;
   headset-control.enable = mkDefault false;
-  gnome.enable = mkDefault true;
+  gnome.enable = mkDefault false;
   wireguard.enable = mkDefault true;
+  platformio-udev.enable = mkDefault false;
+  
 }
 

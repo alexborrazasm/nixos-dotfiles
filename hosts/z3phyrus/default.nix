@@ -15,7 +15,10 @@
     ntfs3g
     linuxPackages.cpupower
     cpuid
-    pkgs.linuxPackages_latest.perf
+    utillinux
+    linuxPackages_latest.perf
+    usbutils
+    pciutils
   ];
   
   powerManagement.cpufreq.max = 3200000; 

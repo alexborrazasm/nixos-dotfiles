@@ -61,18 +61,18 @@
       ncg = "sudo nix-collect-garbage -d";
 
       # Aliases for university course directories
-      fic = "cd /mnt/data/Documents/fic/2_curso/q_2";
-      lsi = "cd /mnt/data/Documents/fic/2_curso/q_1/LSI";
-      so  = "cd /mnt/data/Documents/fic/2_curso/q_1/SO";
-      ds  = "cd /mnt/data/Documents/fic/2_curso/q_1/DS";
-      md  = "cd /mnt/data/Documents/fic/2_curso/q_1/MD";
-      ec  = "cd /mnt/data/Documents/fic/2_curso/q_1/EC";
-      xp  = "cd /mnt/data/Documents/fic/2_curso/q_1/XP";
-      ac  = "cd /mnt/data/Documents/fic/2_curso/q_2/AC";
-      cpf = "cd /mnt/data/Documents/fic/2_curso/q_2/CP";
-      sc  = "cd /mnt/data/Documents/fic/2_curso/q_2/SC";
-      si  = "cd /mnt/data/Documents/fic/2_curso/q_2/SI";
-      dhi = "cd /mnt/data/Documents/fic/2_curso/q_2/DHI"; 
+      fic = "cd /home/alex/Documents/fic/2_curso/q_2";
+      lsi = "cd /home/alex/Documents/fic/2_curso/q_1/LSI";
+      so  = "cd /home/alex/Documents/fic/2_curso/q_1/SO";
+      ds  = "cd /home/alex/Documents/fic/2_curso/q_1/DS";
+      md  = "cd /home/alex/Documents/fic/2_curso/q_1/MD";
+      ec  = "cd /home/alex/Documents/fic/2_curso/q_1/EC";
+      xp  = "cd /home/alex/Documents/fic/2_curso/q_1/XP";
+      ac  = "cd /home/alex/Documents/fic/2_curso/q_2/AC";
+      cpf = "cd /home/alex/Documents/fic/2_curso/q_2/CP";
+      sc  = "cd /home/alex/Documents/fic/2_curso/q_2/SC";
+      si  = "cd /home/alex/Documents/fic/2_curso/q_2/SI";
+      dhi = "cd /home/alex/Documents/fic/2_curso/q_2/DHI"; 
     };
     initExtra = ''
       # for ssh

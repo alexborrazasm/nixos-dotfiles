@@ -62,6 +62,8 @@ in {
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    programs.nix-ld.enable = true;
+
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
       vim
