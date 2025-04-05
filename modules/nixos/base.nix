@@ -75,6 +75,11 @@ in {
       tree
       lm_sensors
       home-manager
+      linuxPackages.cpupower
+      cpuid
+      utillinux
+      usbutils
+      pciutils
     ];
   };
 }

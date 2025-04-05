@@ -13,12 +13,6 @@
   environment.systemPackages = with pkgs; [
     os-prober
     ntfs3g
-    linuxPackages.cpupower
-    cpuid
-    utillinux
-    linuxPackages_latest.perf
-    usbutils
-    pciutils
   ];
   
   powerManagement.cpufreq.max = 3200000; 

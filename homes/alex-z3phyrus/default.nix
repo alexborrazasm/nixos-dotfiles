@@ -28,6 +28,9 @@
       papi
       numactl
       gnuplot
+      texworks
+      linuxPackages_latest.perf
+
     
       # Utils
       rlwrap
