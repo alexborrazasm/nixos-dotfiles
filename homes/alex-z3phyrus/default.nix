@@ -28,10 +28,11 @@
       papi
       numactl
       gnuplot
-      texworks
       linuxPackages_latest.perf
 
-    
+      # latex
+      texlive.combined.scheme-full
+
       # Utils
       rlwrap
       zip
@@ -76,6 +77,9 @@
       sc  = "cd /home/alex/Documents/fic/2_curso/q_2/SC";
       si  = "cd /home/alex/Documents/fic/2_curso/q_2/SI";
       dhi = "cd /home/alex/Documents/fic/2_curso/q_2/DHI"; 
+      
+      # some_command | copy
+      copy = "wl-copy";
     };
     initExtra = ''
       # for ssh
