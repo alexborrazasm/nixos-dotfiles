@@ -1,5 +1,5 @@
 # homes/alex-z3phyrus/default.nix
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgsUnstable, inputs, ... }:
 
 {
   # Enable Home Manager to manage itself
@@ -14,10 +14,9 @@
     # Packages to install
     packages = with pkgs; [
       # Development tools
-      vscode
+      pkgsUnstable.vscode
       gcc
       gnumake
-      python3
       valgrind
       gdb
       jetbrains.idea-ultimate
@@ -29,6 +28,7 @@
       numactl
       gnuplot
       linuxPackages_latest.perf
+      (python3.withPackages (ps: with ps; [ numpy ]))
 
       # latex
       texlive.combined.scheme-full
@@ -52,6 +52,21 @@
       dnsutils
       traceroute
     ];
+
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+      size = 24;
+    };
+  };
+
+  dconf.settings = {
+    "org.gnome.desktop.interface" = {
+      cursor-theme = "Adwaita";
+      cursor-size = 24;
+    };
   };
 
   # Zsh local configuration
@@ -65,23 +80,21 @@
       ncg = "sudo nix-collect-garbage -d";
 
       # Aliases for university course directories
-      fic = "cd /home/alex/Documents/fic/2_curso/q_2";
-      lsi = "cd /home/alex/Documents/fic/2_curso/q_1/LSI";
-      so  = "cd /home/alex/Documents/fic/2_curso/q_1/SO";
-      ds  = "cd /home/alex/Documents/fic/2_curso/q_1/DS";
-      md  = "cd /home/alex/Documents/fic/2_curso/q_1/MD";
-      ec  = "cd /home/alex/Documents/fic/2_curso/q_1/EC";
       xp  = "cd /home/alex/Documents/fic/2_curso/q_1/XP";
-      ac  = "cd /home/alex/Documents/fic/2_curso/q_2/AC";
-      cpf = "cd /home/alex/Documents/fic/2_curso/q_2/CP";
-      sc  = "cd /home/alex/Documents/fic/2_curso/q_2/SC";
-      si  = "cd /home/alex/Documents/fic/2_curso/q_2/SI";
-      dhi = "cd /home/alex/Documents/fic/2_curso/q_2/DHI"; 
+      ac  = "cd /home/alex/uni/AC";
+      cpf = "cd /home/alex/uni/CP";
+      sc  = "cd /home/alex/uni/SC";
+      si  = "cd /home/alex/uni/SI";
+      dhi = "cd /home/alex/uni/DHI"; 
       
+      # python with numpy
+      npy = ''python3 -q -c 'import numpy as np; import code; code.interact(local=locals())' '';
+
       # some_command | copy
       copy = "wl-copy";
     };
     initExtra = ''
+      eval "$(direnv hook zsh)"
       # for ssh
       export TERM=xterm-256color
     '';

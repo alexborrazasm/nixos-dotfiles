@@ -1,5 +1,5 @@
 # modules/home-manager/chrome.nix
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgsUnstable, ... }:
 
 with lib;
 
@@ -12,25 +12,25 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [ pkgs.google-chrome ];
-
-    # Chrome as default browser
-    xdg.mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "text/html" = "google-chrome.desktop";
-        "x-scheme-handler/http" = "google-chrome.desktop";
-        "x-scheme-handler/https" = "google-chrome.desktop";
-        "x-scheme-handler/about" = "google-chrome.desktop";
-        "x-scheme-handler/unknown" = "google-chrome.desktop";
-      };
-    };
+    home.packages = [ pkgsUnstable.google-chrome ];
+    
+   # # Chrome as default browser
+   # xdg.mimeApps = {
+   #   enable = true;
+   #   defaultApplications = {
+   #     "text/html" = "google-chrome.desktop";
+   #     "x-scheme-handler/http" = "google-chrome.desktop";
+   #     "x-scheme-handler/https" = "google-chrome.desktop";
+   #     "x-scheme-handler/about" = "google-chrome.desktop";
+   #     "x-scheme-handler/unknown" = "google-chrome.desktop";
+   #   };
+   # };
 
     xdg.desktopEntries.google-chrome = {
       name = "Google Chrome";
       genericName = "Web Browser";
       comment = "Access the Internet";
-      exec = "${pkgs.google-chrome}/bin/google-chrome-stable %U ${chromeFlags}";
+      exec = "${pkgsUnstable.google-chrome}/bin/google-chrome-stable %U ${chromeFlags}";
       terminal = false;
       type = "Application";
       icon = "google-chrome";
@@ -45,11 +45,11 @@ in {
       actions = {
         "new-window" = {
           name = "New Window";
-          exec = "${pkgs.google-chrome}/bin/google-chrome-stable ${chromeFlags}";
+          exec = "${pkgsUnstable.google-chrome}/bin/google-chrome-stable ${chromeFlags}";
         };
         "new-private-window" = {
           name = "New Incognito Window";
-          exec = "${pkgs.google-chrome}/bin/google-chrome-stable --incognito ${chromeFlags}";
+          exec = "${pkgsUnstable.google-chrome}/bin/google-chrome-stable --incognito ${chromeFlags}";
         };
       };
     };
