@@ -84,9 +84,15 @@ in {
       man-pages-posix
     ];
 
-    documentation.man = {
-      man-db.enable = true;
-      generateCaches = true;
+    documentation = {
+      man = {
+        enable = true;
+        man-db.enable = true;
+        generateCaches = true;
+      };
+      dev = {
+        enable = true;
+      };
     };
   };
 }

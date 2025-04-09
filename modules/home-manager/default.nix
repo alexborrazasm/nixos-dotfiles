@@ -12,6 +12,7 @@ with lib;
     ./alacritty.nix
     ./dev-base.nix
     ./tools-base.nix
+    ./man-pages.nix
   ];
 
   # Default config
@@ -22,5 +23,6 @@ with lib;
   alacritty.enable = mkDefault false;
   dev-base.enable = mkDefault false;
   tools-base.enable = mkDefault false;
+  man-pages.enable = mkDefault true;
 }
 
