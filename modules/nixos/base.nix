@@ -80,6 +80,13 @@ in {
       utillinux
       usbutils
       pciutils
+      man-pages 
+      man-pages-posix
     ];
+
+    documentation.man = {
+      man-db.enable = true;
+      generateCaches = true;
+    };
   };
 }

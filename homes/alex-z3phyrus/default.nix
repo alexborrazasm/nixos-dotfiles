@@ -13,44 +13,16 @@
     
     # Packages to install
     packages = with pkgs; [
-      # Development tools
+      # Development apps
       pkgsUnstable.vscode
-      gcc
-      gnumake
-      valgrind
-      gdb
       jetbrains.idea-ultimate
-      openmpi 
-      openmpi.dev
-      erlang
-      jdk
-      papi
-      numactl
-      gnuplot
-      linuxPackages_latest.perf
-      (python3.withPackages (ps: with ps; [ numpy ]))
 
-      # latex
-      texlive.combined.scheme-full
-
-      # Utils
-      rlwrap
-      zip
-      unzip
-      xz
-      unrar
-      
       # Communication applications
       discord
 
       # Multimedia applications
       spotify
       vlc
-
-      # Networking tools
-      nmap
-      dnsutils
-      traceroute
     ];
 
     pointerCursor = {

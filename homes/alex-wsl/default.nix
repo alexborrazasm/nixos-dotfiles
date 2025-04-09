@@ -13,25 +13,6 @@
     
     # Packages to install
     packages = with pkgs; [
-      # Utility
-      tree
-      fastfetch
-      htop
-
-      # Development tools
-      git
-      gcc
-      gnumake
-      python3
-      valgrind
-      gdb
-      openmpi 
-      openmpi.dev
-      erlang
-
-      # Networking tools
-      nmap
-      dnslookup
     ];
   };
 

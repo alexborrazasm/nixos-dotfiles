@@ -66,6 +66,8 @@
               zsh.enable = true;
               nvim.enable = true;
               alacritty.enable = true;
+              dev-base.enable = true;
+              tools-base.enable = true;
             }
           ];
         };
@@ -81,6 +83,8 @@
               git.enable = true;
               zsh.enable = true;
               nvim.enable = true;
+              dev-base.enable = true;
+              tools-base.enable = true;
             }
           ];
         };
