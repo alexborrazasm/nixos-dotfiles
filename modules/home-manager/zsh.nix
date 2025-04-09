@@ -35,10 +35,6 @@ in {
         };
       }];
       shellAliases = {
-        # bat
-        cat  = "bat";
-        catp = "bat -p";
-
         # lsd
         ll  = "lsd -lh --group-dirs=first";
         la  = "lsd -a --group-dirs=first";
@@ -66,6 +62,8 @@ in {
       bat
       lsd
       fzf
+      bat-extras.batman
+      bat-extras.batdiff
     ];
  };
 }
