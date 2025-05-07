@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     os-prober
     ntfs3g
+    linuxPackages_zen.perf
   ];
   
   powerManagement.cpufreq.max = 3200000; 
@@ -42,6 +43,7 @@
     # Enable "Silent Boot"
     consoleLogLevel = 0;
     initrd.verbose = false;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "quiet"
       "splash"

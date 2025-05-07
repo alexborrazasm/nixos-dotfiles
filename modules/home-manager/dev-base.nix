@@ -29,7 +29,6 @@ in {
       numactl
       papi
       gnuplot
-      linuxPackages_latest.perf
       
       # python
       (python3.withPackages (ps: with ps; [ numpy ]))
