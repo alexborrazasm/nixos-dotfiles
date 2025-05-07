@@ -35,7 +35,7 @@ in {
       (python3.withPackages (ps: with ps; [ numpy ]))
 
       # latex
-      texlive.combined.scheme-full
+      nixpkgs.texlive.combined.scheme-small
     ];
   };
 }
