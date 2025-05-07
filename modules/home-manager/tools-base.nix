@@ -21,7 +21,6 @@ in {
       tree
       fastfetch
       htop
-      btop
       
       # Networking tools
       nmap

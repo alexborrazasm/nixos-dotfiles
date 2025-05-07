@@ -14,17 +14,17 @@ in {
   config = mkIf cfg.enable {
     home.packages = [ pkgsUnstable.google-chrome ];
     
-   # # Chrome as default browser
-   # xdg.mimeApps = {
-   #   enable = true;
-   #   defaultApplications = {
-   #     "text/html" = "google-chrome.desktop";
-   #     "x-scheme-handler/http" = "google-chrome.desktop";
-   #     "x-scheme-handler/https" = "google-chrome.desktop";
-   #     "x-scheme-handler/about" = "google-chrome.desktop";
-   #     "x-scheme-handler/unknown" = "google-chrome.desktop";
-   #   };
-   # };
+   # Chrome as default browser
+   xdg.mimeApps = {
+     enable = true;
+     defaultApplications = {
+       "text/html" = "google-chrome.desktop";
+       "x-scheme-handler/http" = "google-chrome.desktop";
+       "x-scheme-handler/https" = "google-chrome.desktop";
+       "x-scheme-handler/about" = "google-chrome.desktop";
+       "x-scheme-handler/unknown" = "google-chrome.desktop";
+     };
+   };
 
     xdg.desktopEntries.google-chrome = {
       name = "Google Chrome";
