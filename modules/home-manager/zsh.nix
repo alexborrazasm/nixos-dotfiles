@@ -55,13 +55,6 @@ in {
         export CPATH=$HOME/.nix-profile/include:$CPATH
         export LIBRARY_PATH=$HOME/.nix-profile/lib:$LIBRARY_PATH
         export LD_LIBRARY_PATH=$HOME/.nix-profile/lib:$LD_LIBRARY_PATH
-        
-          manf() {
-            local page
-            page=$(man -k . | awk '{print $1}' | sort -u | fzf)
-            [ -n "$page" ] && batman "$page"
-          } 
-
       '';
     };
 
