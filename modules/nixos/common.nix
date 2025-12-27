@@ -36,6 +36,8 @@
       nsp  = "nix-shell -p "; # <package>
       nrun = "nix run";
       ndev = "nix develop";
+
+      neofetch = "fastfetch";
     };
   };
 
@@ -99,7 +101,7 @@
     curl
     git
     lm_sensors # for `sensors` command
-    neofetch
+    fastfetch
     lsd
     bat
   ];

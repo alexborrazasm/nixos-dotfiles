@@ -73,10 +73,7 @@
       nrun = "nix run";
       ndev = "nix develop";
 
-      gs = "git status";
-      ga = "git add";
-      gc = "git commit";
-      gp = "git push";
+      neofetch = "fastfetch";
     };
 
     initContent = ''
