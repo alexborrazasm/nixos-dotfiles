@@ -23,6 +23,7 @@
     bat
     lsd # A modern replacement for ‘ls’
 
+    htop
     btop  # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring

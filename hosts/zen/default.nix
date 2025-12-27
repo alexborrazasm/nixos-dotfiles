@@ -53,6 +53,22 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+    "/home".options = [ "compress=zstd" ];
+    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/swap".options = [ "noatime" ];
+  };
+
+  services.btrfs.autoScrub.enable = true;
+
+  # NixOS will automatically create the swap file with the appropriate 
+  # attributes for Btrfs including disabling copy on write.
+  swapDevices = [{ 
+    device = "/swap/swapfile"; 
+    size = 8*1024; # Creates an 8GB swap file 
+  }];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
