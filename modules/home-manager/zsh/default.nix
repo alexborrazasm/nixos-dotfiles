@@ -10,6 +10,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
+    completionInit="autoload -Uz compinit && compinit";
     dotDir = "${config.xdg.configHome}/zsh";
 
     history = {
@@ -77,8 +78,19 @@
     };
 
     initContent = ''
+      # Menu select
+      zstyle ':completion:*' menu select
+      zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+    
+      # Apply colors to completion menu
+      zstyle ':completion:*:default' list-colors "''${(s.:.)LS_COLORS}"
+
       # Reduce Zsh startup delay
       setopt NO_BEEP
+
+      # Don't consider certain characters part of the word
+      WORDCHARS=''${WORDCHARS//\/[&.;]}
     '';
 
   };
@@ -93,8 +105,5 @@
     enableZshIntegration = true;
   };
 
-  # Scripts
-  #home.file.".config/zsh/scripts".source = ./files/scripts;
-  #home.file.".config/zsh/scripts".recursive = true;
 }
 
