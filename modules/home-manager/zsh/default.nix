@@ -82,9 +82,12 @@
       zstyle ':completion:*' menu select
       zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-    
       # Apply colors to completion menu
       zstyle ':completion:*:default' list-colors "''${(s.:.)LS_COLORS}"
+
+      # Skip works
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
 
       # Reduce Zsh startup delay
       setopt NO_BEEP
