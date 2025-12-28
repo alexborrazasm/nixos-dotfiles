@@ -36,6 +36,9 @@
       # Clipboard
       copy_on_select = "yes";
       strip_trailing_spaces = "smart";
+      
+      # Modify background
+      background = "#11111B";   # crust mocha Catppuccin-Mocha
     };
 
     keybindings = {
