@@ -27,6 +27,7 @@
   "hyprland/window": {  
   //"format": "{}"   // <--- these is the default value  
     "format": "<span  weight='bold' >{class}</span>",
+    "tooltip": false,
     "max-length": 120,
     "icon": false,
     "icon-size": 13

@@ -3,14 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
+    stylix,
     ...
   }: {
     nixosConfigurations = {
@@ -24,14 +31,19 @@
 
           modules = [
             ./hosts/zen
-
             home-manager.nixosModules.home-manager
+
             {
-              home-manager.useGlobalPkgs = true;
+              home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./homes/${username}/home.nix;
+              home-manager.users.${username} = {
+	        imports = [
+                  ./homes/${username}/home.nix
+		  stylix.homeModules.stylix
+                ];
+	      };
             }
           ];
         };

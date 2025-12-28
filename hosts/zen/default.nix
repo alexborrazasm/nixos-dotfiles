@@ -8,6 +8,7 @@
       ../../modules/nixos/common.nix
       ../../modules/nixos/hypr.nix
       ../../modules/nixos/fonts.nix
+      ../../modules/nixos/headsetcontrol.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

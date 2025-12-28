@@ -6,12 +6,18 @@
 }: {
   imports = [
     ../../modules/home-manager/common
+    ../../modules/home-manager/stylix
     ../../modules/home-manager/hypr
     ../../modules/home-manager/zsh
     ../../modules/home-manager/starship
     ../../modules/home-manager/firefox
     ../../modules/home-manager/utils
   ];
+  
+  home.packages = with pkgs; [
+    discord
+  ];
+
 
   # basic configuration of git
   programs.git = {

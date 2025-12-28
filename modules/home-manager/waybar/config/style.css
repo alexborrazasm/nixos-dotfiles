@@ -6,7 +6,7 @@
 *
 * =========================================================================== */
 
-@import 'themes/catppuccin-mocha.css';
+@import 'themes/colors.css';
 
 /* -----------------------------------------------------------------------------
 * Base styles
@@ -91,7 +91,7 @@ tooltip label {
 }
 
 #workspaces button.empty {
-	color: @overlay0;
+	color: @surface0;
 	animation: ws_normal 20s ease-in-out 1;
 	transition: all 0.3s ease;
 }
@@ -156,7 +156,7 @@ tooltip label {
 }
 
 #pulseaudio.muted {
-	color: @subtext0;
+	color: @text;
 }
 
 /* -----------------------------------------------------------------------------
@@ -172,7 +172,7 @@ tooltip label {
 }
 
 #network.disabled {
-	color: @subtext0;
+	color: @text;
 }
 
 /* -----------------------------------------------------------------------------

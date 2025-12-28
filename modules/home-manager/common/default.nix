@@ -7,9 +7,7 @@
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
-  home.packages = with pkgs; [
-    tree
-  ];
+  nixpkgs.config.allowUnfree = true;
 
   xdg.userDirs.enable = true;
 
