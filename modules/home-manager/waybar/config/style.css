@@ -64,45 +64,46 @@ tooltip label {
 * Workspaces
 * -------------------------------------------------------------------------- */
 
-#workspaces {
-	border-radius: 12px;
+#workspaces{
+	color: @white;
+	box-shadow: none;
+	text-shadow: none;
+	border-radius: 9px;
+	transition: 0.2s ease;
+	padding-left: 4px;
+	padding-right: 4px;
 }
+
 
 #workspaces button {
-	padding: 6px 10px;
-	margin: 0 2px;
-	background: @background-primary;
-	color: @subtext0;
-	border-radius: 8px;
-	font-weight: bold;
-	border: 1px solid @border-color;
+	color: @white;
+	box-shadow: none;
+	text-shadow: none;
+	border-radius: 9px;
+	transition: 0.2s ease;
+	padding-left: 4px;
+	padding-right: 4px;
+	animation: ws_normal 20s ease-in-out 1;
 }
 
-#workspaces button:hover {
-	background: @background-hover;
-	color: @lavender;
-	border-color: @mauve;
-}
-
-#workspaces button.active,
-#workspaces button.focused {
-	background: @mauve;
-	color: @base;
-	font-weight: bold;
-	opacity: 1;
-	border-color: @pink;
+#workspaces button.active {
+	color: @white;   
+	transition: all 0.3s ease;
 }
 
 #workspaces button.empty {
-	opacity: 0.3;
-	background: @background-secondary;
+	color: @overlay0;
+	animation: ws_normal 20s ease-in-out 1;
+	transition: all 0.3s ease;
 }
 
-#workspaces button.urgent {
-	background: @error;
-	color: @base;
-	border-color: @maroon;
+#workspaces button:hover {
+    background: none;
+    color: #72D792;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
+
 
 /* -----------------------------------------------------------------------------
 * Window title

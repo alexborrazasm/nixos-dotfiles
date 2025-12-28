@@ -13,15 +13,23 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{}",
+    "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
+      "default": "",
+      "active": ""
     },
     "persistent-workspaces": {
-      "*": 1
+      "*": 9
     }
+  },
+
+  // Windows (Hyprland)
+  "hyprland/window": {  
+  //"format": "{}"   // <--- these is the default value  
+    "format": "<span  weight='bold' >{class}</span>",
+    "max-length": 120,
+    "icon": false,
+    "icon-size": 13
   },
 
   // Idle inhibitor
@@ -96,7 +104,7 @@
 
   // Clock
   "clock": {
-    "format": "  {:%H:%M %a}",
+    "format": "  {:%H:%M %a %d}",
     "format-alt": "  {:%d/%m/%Y  %H:%M:%S}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
