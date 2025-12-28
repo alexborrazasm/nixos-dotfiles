@@ -48,7 +48,9 @@
     ];
   };
 
-  networking.hostName = "zen"; # Define your hostname.
+  networking.hostName = "zen";
+
+  hardware.bluetooth.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;

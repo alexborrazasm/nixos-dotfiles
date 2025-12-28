@@ -81,7 +81,7 @@
     LC_NUMERIC = "es_ES.UTF-8";
     LC_PAPER = "es_ES.UTF-8";
     LC_TELEPHONE = "es_ES.UTF-8";
-    LC_TIME = "es_ES.UTF-8";
+    LC_TIME = "en_GB.UTF-8";
   };
 
   # Configure keymap in X11

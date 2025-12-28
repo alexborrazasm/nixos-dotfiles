@@ -15,6 +15,7 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
+      font-awesome
       nerd-fonts.caskaydia-cove
     ];
   };
