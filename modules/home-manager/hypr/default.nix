@@ -13,7 +13,7 @@
 
   wayland.windowManager.hyprland.enable = true;
 
-  # Avoid conflicts with uwsm
+  # Avoid conflicts with UWSM
   wayland.windowManager.hyprland.systemd.enable = false;
 
   programs.hyprlock.enable = true;
@@ -27,6 +27,7 @@
     brightnessctl
     playerctl
     pavucontrol
+    pamixer
   ];
 
   services.network-manager-applet.enable = true;

@@ -15,6 +15,12 @@
     
     polarity = "dark";
 
+    targets.gtk.extraCss = ''
+      .dialog-action-area > .text-button {
+        color: @dialog_fg_color;
+      }      
+    '';
+
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.caskaydia-cove;

@@ -1,11 +1,4 @@
 {
-  // Launcher
-  "custom/launcher": {
-    "format": "",
-    "on-click": "rofi -show drun",
-    "tooltip": false
-  },
-
   // Workspaces (Hyprland)
   "hyprland/workspaces": {
     "on-scroll-up": "hyprctl dispatch workspace r-1",
