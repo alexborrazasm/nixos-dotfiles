@@ -19,7 +19,6 @@ $java\
 $kotlin\
 $haskell\
 $python\
-${custom.nix_files}\
 [](fg:green bg:sapphire)\
 $nix_shell\
 $conda\
