@@ -4,7 +4,9 @@
 }: {
   stylix = {
     enable = true;
-    #image = ../wallpapers/photo.jpg; # TODO
+
+    image = ./wallpapers/nix-black-4k.png;
+    #image = ./wallpapers/ocean_with_cloud.png;
 
     # Use a prebuilt theme from the base16-schemes package
     # See https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
