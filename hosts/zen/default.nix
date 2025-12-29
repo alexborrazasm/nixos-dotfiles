@@ -9,6 +9,7 @@
       ../../modules/nixos/hypr.nix
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/headsetcontrol.nix
+      ../../modules/nixos/docker-rootless.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -71,6 +72,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Filesystem settings for Btrfs
   fileSystems = {
     "/".options = [ "compress=zstd" ];
     "/home".options = [ "compress=zstd" ];
@@ -79,6 +81,7 @@
   };
 
   services.btrfs.autoScrub.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
 
   # NixOS will automatically create the swap file with the appropriate 
   # attributes for Btrfs including disabling copy on write.
