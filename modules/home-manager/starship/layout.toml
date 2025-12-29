@@ -130,11 +130,12 @@ style = "bg:green"
 format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
 
 [custom.nix_files]
+command = "nix --version | awk '{print $3}'"
 detect_files = ['flake.nix', 'shell.nix', 'default.nix']
 detect_extensions = ['nix']
 symbol = " "
 style = "bg:green"
-format = '[[ $symbol](fg:crust bg:green)]($style)'
+format = '[[ $symbol $output](fg:crust bg:green)]($style)'
 
 [docker_context]
 symbol = ""
@@ -150,7 +151,7 @@ ignore_base = false
 [nix_shell]
 symbol = " "
 style = "bg:green"
-format = '[[ $symbol( $state) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol$state (\($name\)) ](fg:crust bg:sapphire)]($style)'
 
 [line_break]
 disabled = false

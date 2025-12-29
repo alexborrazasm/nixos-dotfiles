@@ -22,6 +22,7 @@
     "dbus",
     "define-color",
     "dialout",
+    "direnv",
     "dmask",
     "dmenu",
     "dnsutils",
