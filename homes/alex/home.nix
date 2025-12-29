@@ -12,12 +12,13 @@
     ../../modules/home-manager/starship
     ../../modules/home-manager/firefox
     ../../modules/home-manager/utils
+    ../../modules/home-manager/vscode
   ];
   
   home.packages = with pkgs; [
     discord
+    spotify
   ];
-
 
   # basic configuration of git
   programs.git = {

@@ -45,7 +45,8 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = ["networkmanager" "wheel"];
+    # dialout allows access to /dev/ttyUSB* and /dev/ttyACM* without sudo
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     shell = pkgs.zsh;
   };
 
@@ -108,4 +109,10 @@
 
   # Set the default editor to vim
   environment.variables.EDITOR = "nvim";
+
+  programs.seahorse.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
+
+  services.dbus.packages = [ pkgs.gnome-keyring pkgs.gcr ];
 }
