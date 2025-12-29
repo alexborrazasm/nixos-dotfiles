@@ -15,6 +15,8 @@
     
     polarity = "dark";
 
+    # Fix for GTK dialogs having unreadable text buttons
+    # https://github.com/nix-community/stylix/issues/1560
     targets.gtk.extraCss = ''
       .dialog-action-area > .text-button {
         color: @dialog_fg_color;

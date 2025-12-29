@@ -16,6 +16,8 @@
  
   # Bootloader.
   boot = {
+    initrd.systemd.enable = true;
+
     loader = {
       systemd-boot.enable = false;  # Disable systemd-boot
       efi.canTouchEfiVariables = true;
@@ -25,13 +27,13 @@
         device = "nodev";
         useOSProber = true;
         efiSupport = true;
-	gfxmodeEfi = "2880x1800,auto";
+	      gfxmodeEfi = "2880x1800,auto";
         splashImage = null;
         default = "saved";
         extraConfig = ''
           set save_default=true
         '';
-	theme = pkgs.stdenv.mkDerivation {
+	      theme = pkgs.stdenv.mkDerivation {
           pname = "distro-grub-themes";
           version = "3.1";
           src = pkgs.fetchFromGitHub {
@@ -85,7 +87,7 @@
     size = 8*1024; # Creates an 8GB swap file 
   }];
 
-  # Open ports in the firewall.
+  # Open ports in the firewall. # TODO
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
