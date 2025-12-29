@@ -9,6 +9,7 @@
     ../waybar
     ../kitty
     ../wofi
+    ../swaync
   ];
 
   wayland.windowManager.hyprland.enable = true;

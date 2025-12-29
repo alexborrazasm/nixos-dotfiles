@@ -43,7 +43,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity: >3}%",
+    "format": "{icon}   {capacity: >3}%",
     "format-icons": ["", "", "", "", ""]
   },
 
@@ -55,7 +55,7 @@
 
   // Backlight
   "backlight": {
-    "format": "{icon} {percent: >3}%",
+    "format": "{icon}   {percent: >3}%",
     "format-icons": ["", ""],
     "on-scroll-down": "brightnessctl set 5%-",
     "on-scroll-up": "brightnessctl set +5%"
@@ -64,7 +64,7 @@
   // Audio
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{icon} {volume: >3}%",
+    "format": "{icon}   {volume: >3}%",
     "format-bluetooth": "{icon} {volume: >3}%",
     "format-muted": " muted",
     "format-icons": {
@@ -79,21 +79,6 @@
     "on-click": "pavucontrol",
     "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
     "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
-  },
-
-  // Network
-  "network": {
-    "format": "{ifname}",
-    "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": "  {ifname}",
-    "format-disconnected": "Disconnected ⚠",
-    "tooltip-format": " {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50,
-    "on-click": "nm-connection-editor",
-    "on-click-right": "nm-connection-editor"
   },
 
   // Clock
@@ -123,13 +108,13 @@
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "notification": "<span><span foreground='red'><sup></sup></span></span>",
       "none": "",
-      "dnd-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-notification": "<span><span foreground='red'><sup></sup></span></span>",
       "dnd-none": "",
-      "inhibited-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "inhibited-notification": "<span><span foreground='red'><sup></sup></span></span>",
       "inhibited-none": "",
-      "dnd-inhibited-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-inhibited-notification": "<span><span foreground='red'><sup></sup></span></span>",
       "dnd-inhibited-none": ""
     },
     "return-type": "json",

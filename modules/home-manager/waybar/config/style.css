@@ -29,7 +29,6 @@ window#waybar {
 
 #idle_inhibitor,
 #tray,
-#custom-notification,
 #language,
 #network,
 #backlight,
@@ -40,6 +39,11 @@ window#waybar {
 #workspaces {
 	padding: 6px;
 	margin: 0px 3px;
+}
+
+#custom-notification {
+	padding: 6px;
+	margin-right: 10px;
 }
 
 /* -----------------------------------------------------------------------------

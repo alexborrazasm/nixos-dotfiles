@@ -23,7 +23,8 @@
     "backlight",
     "pulseaudio",
     "battery",
-    "clock"
+    "clock",
+    "custom/notification"
   ],
 
   "include": "~/.config/waybar/modules.jsonc"
