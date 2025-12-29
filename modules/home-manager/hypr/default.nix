@@ -21,6 +21,9 @@
   services.hyprpaper.enable = true;
 
   home.packages = with pkgs; [
+    hyprshot
+    cliphist
+    wl-clipboard
     jq # for workspace script
     networkmanagerapplet
     blueman
@@ -28,6 +31,7 @@
     playerctl
     pavucontrol
     pamixer
+    nautilus
   ];
 
   services.network-manager-applet.enable = true;
@@ -40,4 +44,3 @@
   };
 
 }
-
