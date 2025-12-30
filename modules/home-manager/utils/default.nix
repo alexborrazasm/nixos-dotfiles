@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [
       numpy
+      dbus-python
     ]))
     
     # system info
