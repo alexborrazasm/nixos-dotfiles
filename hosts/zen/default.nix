@@ -9,14 +9,14 @@
       ../../modules/nixos/common.nix
       ../../modules/nixos/hypr.nix
       ../../modules/nixos/fonts.nix
-      ../../modules/nixos/headsetcontrol.nix
+      ../../modules/nixos/solaar.nix # Logitech G733 control
       ../../modules/nixos/docker-rootless.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
  
-  # Bootloader.
+  # Bootloader
   boot = {
     initrd.systemd.enable = true;
 

@@ -18,6 +18,7 @@
     discord
     spotify
     vscode
+    evince
   ];
 
   # basic configuration of git
