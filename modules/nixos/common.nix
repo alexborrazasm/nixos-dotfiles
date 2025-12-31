@@ -45,8 +45,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    # dialout allows access to /dev/ttyUSB* and /dev/ttyACM* without sudo
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
 
