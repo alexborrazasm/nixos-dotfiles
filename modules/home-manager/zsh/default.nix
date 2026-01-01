@@ -25,7 +25,7 @@
     plugins = [
       {
         name = "zsh-colored-man-pages";
-	      file = "plugins/colored-man-pages/colored-man-pages.plugin.zsh";
+        file = "plugins/colored-man-pages/colored-man-pages.plugin.zsh";
         src = builtins.fetchGit {
           url = "https://github.com/ohmyzsh/ohmyzsh/";
           rev = "6bc4c80c7db072a0d2d265eb3589bbe52e0d2737";
@@ -33,7 +33,7 @@
       }
       {
         name = "zsh-extract";
-	      file = "plugins/extract/extract.plugin.zsh";
+        file = "plugins/extract/extract.plugin.zsh";
         src = builtins.fetchGit {
           url = "https://github.com/ohmyzsh/ohmyzsh/";
           rev = "92aed2e93624124182ba977a91efa5bbe1e76d5f";
@@ -41,7 +41,7 @@
       }
       {
         name = "zsh-sudo";
-	      file = "plugins/sudo/sudo.plugin.zsh";
+        file = "plugins/sudo/sudo.plugin.zsh";
         src = builtins.fetchGit {
           url = "https://github.com/ohmyzsh/ohmyzsh/";
           rev = "f8bf8f0029a475831ebfba0799975ede20e08742";

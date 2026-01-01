@@ -1,7 +1,6 @@
 { 
   config, 
   pkgs, 
-  username,
   ... 
 }: {
   imports =
@@ -11,6 +10,7 @@
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/solaar.nix # Logitech G733 control
       ../../modules/nixos/docker-rootless.nix
+      ../../modules/nixos/embedded_dev.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -29,13 +29,13 @@
         device = "nodev";
         useOSProber = true;
         efiSupport = true;
-	      gfxmodeEfi = "2880x1800,auto";
+        gfxmodeEfi = "2880x1800,auto";
         splashImage = null;
         default = "saved";
         extraConfig = ''
           set save_default=true
         '';
-	      theme = pkgs.stdenv.mkDerivation {
+        theme = pkgs.stdenv.mkDerivation {
           pname = "distro-grub-themes";
           version = "3.1";
           src = pkgs.fetchFromGitHub {
@@ -101,20 +101,6 @@
     #  { from = 8000; to = 8010; }
     #];
   };
-  
-  # For embedded dev
-  # dialout allows access to /dev/ttyUSB* and /dev/ttyACM* without sudo
-  # plugdev needed to OpenOCD without root
-  users = {
-    extraGroups.plugdev = { };
-    users.${username}.extraGroups = [ "dialout" "plugdev" ];
-  };
-
-  # udev rules for embedded dev
-  services.udev.packages = [
-    pkgs.platformio-core
-    pkgs.openocd
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

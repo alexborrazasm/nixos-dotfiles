@@ -39,9 +39,9 @@
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
               home-manager.users.${username} = {
-	              imports = [
+                imports = [
                   ./homes/${username}/home.nix
-		               stylix.homeModules.stylix
+                   stylix.homeModules.stylix
                 ];
               };
             }

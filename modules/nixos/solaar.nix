@@ -10,4 +10,3 @@
     # Add udev rules
     services.udev.packages = [ pkgs.logitech-udev-rules ];
 }
-
