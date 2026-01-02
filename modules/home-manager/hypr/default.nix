@@ -33,6 +33,7 @@
     pavucontrol
     pamixer
     nautilus
+    nwg-displays
   ];
 
   services.network-manager-applet.enable = true;

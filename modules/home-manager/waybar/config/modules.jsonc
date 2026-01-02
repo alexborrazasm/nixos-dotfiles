@@ -6,6 +6,7 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": false,
+    "move-to-monitor": true,
     "format": "{icon}",
     "format-icons": {
       "default": "",
