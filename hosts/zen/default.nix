@@ -11,6 +11,8 @@
       ../../modules/nixos/solaar.nix # Logitech G733 control
       ../../modules/nixos/docker-rootless.nix
       ../../modules/nixos/embedded_dev.nix
+      ../../modules/nixos/printer.nix
+      ../../modules/nixos/udisks2.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

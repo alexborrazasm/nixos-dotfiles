@@ -18,4 +18,3 @@
   xdg.userDirs.enable = true;
 
 }
-

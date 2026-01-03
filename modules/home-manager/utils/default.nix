@@ -24,6 +24,7 @@
     dnsutils  # `dig` + `nslookup`
     nmap
     traceroute
+    net-tools
 
     # misc
     tree

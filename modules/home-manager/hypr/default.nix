@@ -10,6 +10,7 @@
     ../kitty
     ../wofi
     ../swaync
+    ../nautilus
   ];
 
   wayland.windowManager.hyprland.enable = true;
@@ -32,7 +33,6 @@
     playerctl
     pavucontrol
     pamixer
-    nautilus
     nwg-displays
   ];
 
