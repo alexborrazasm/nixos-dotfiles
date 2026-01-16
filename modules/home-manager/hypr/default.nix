@@ -8,9 +8,11 @@
   [
     ../waybar
     ../kitty
+    ../alacritty
     ../wofi
     ../swaync
     ../nautilus
+    ../stylix
   ];
 
   wayland.windowManager.hyprland.enable = true;
@@ -21,6 +23,7 @@
   programs.hyprlock.enable = true;
   services.hypridle.enable = true;
   services.hyprpaper.enable = true;
+  services.hyprpaper.settings.splash = false;
 
   home.packages = with pkgs; [
     hyprshot
