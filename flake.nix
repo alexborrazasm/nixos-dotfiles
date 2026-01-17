@@ -22,12 +22,12 @@
   }: {
     nixosConfigurations = {
       zen = let
+        system = "x86_64-linux";
         username = "alex";
-        specialArgs = {inherit username;};
+        specialArgs = { inherit username; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
-          system = "x86_64-linux";
 
           modules = [
             ./hosts/zen
@@ -47,7 +47,25 @@
             }
           ];
         };
+    };
+    
+    homeConfigurations = {
+      wsl = let
+        username = "alex";
+        system = "x86_64-linux";
+        specialArgs = { inherit username; };
+      in
+        home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
 
+        extraSpecialArgs = inputs // specialArgs;
+
+        modules = [
+          ./homes/${username}-wsl/home.nix
+          stylix.homeModules.stylix
+        ];
+      };
     };
   };
+
 }
