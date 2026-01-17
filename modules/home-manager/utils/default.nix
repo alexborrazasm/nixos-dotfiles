@@ -49,9 +49,6 @@
     pciutils # lspci
     usbutils # lsusb
     numactl
-
-    git
-    neovim
   ];
 
 }

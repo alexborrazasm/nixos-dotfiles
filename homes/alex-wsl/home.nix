@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../../modules/home-manager/common
+    ../../modules/home-manager/stylix
     ../../modules/home-manager/zsh
     ../../modules/home-manager/starship
     ../../modules/home-manager/utils

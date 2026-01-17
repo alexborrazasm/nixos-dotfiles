@@ -33,11 +33,6 @@ let
   };
 in
 {
-  imports =
-  [
-    ../stylix
-  ];
-
   programs.starship = {
     enable = true;
     enableBashIntegration = true;

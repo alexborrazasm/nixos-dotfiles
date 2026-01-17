@@ -22,11 +22,11 @@
   }: {
     nixosConfigurations = {
       zen = let
-        system = "x86_64-linux";
         username = "alex";
         specialArgs = { inherit username; };
       in
         nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           inherit specialArgs;
 
           modules = [

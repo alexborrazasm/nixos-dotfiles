@@ -12,7 +12,6 @@
     ../wofi
     ../swaync
     ../nautilus
-    ../stylix
   ];
 
   wayland.windowManager.hyprland.enable = true;
