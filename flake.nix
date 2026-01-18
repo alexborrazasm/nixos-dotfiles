@@ -11,6 +11,7 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprdynamicmonitors.url = "github:fiffeek/hyprdynamicmonitors";
   };
 
   outputs = inputs @ {
@@ -18,6 +19,7 @@
     nixpkgs,
     home-manager,
     stylix,
+    hyprdynamicmonitors,
     ...
   }: {
     nixosConfigurations = {
@@ -37,11 +39,14 @@
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs = inputs // specialArgs;
+              #home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.extraSpecialArgs = {
+                inherit inputs username;
+              };
               home-manager.users.${username} = {
                 imports = [
                   ./homes/${username}/home.nix
-                   stylix.homeModules.stylix
+                  stylix.homeModules.stylix
                 ];
               };
             }

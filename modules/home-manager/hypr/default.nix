@@ -2,6 +2,7 @@
   config, 
   pkgs,
   lib,
+  inputs,
   ... 
 }: {
   imports = 
@@ -35,7 +36,7 @@
     playerctl
     pavucontrol
     pamixer
-    nwg-displays
+    inputs.hyprdynamicmonitors.packages.${pkgs.system}.default
   ];
 
   services.network-manager-applet.enable = true;

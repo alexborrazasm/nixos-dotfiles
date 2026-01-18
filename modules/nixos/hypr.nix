@@ -23,6 +23,9 @@
   environment.systemPackages = with pkgs; [
     tuigreet
   ];
+  
+  # Required by power events and lid events on hyprdynamicmonitors
+  services.upower.enable = true;
 
   programs.uwsm.enable = true;
 
