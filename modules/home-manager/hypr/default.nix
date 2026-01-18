@@ -13,6 +13,7 @@
     ../wofi
     ../swaync
     ../nautilus
+    ../sunsetr
   ];
 
   wayland.windowManager.hyprland.enable = true;
@@ -37,9 +38,8 @@
     pavucontrol
     pamixer
     inputs.hyprdynamicmonitors.packages.${pkgs.system}.default
-    inputs.sunsetr.packages.${pkgs.system}.sunsetr
   ];
-
+  
   services.network-manager-applet.enable = true;
   services.blueman-applet.enable = true;
 
