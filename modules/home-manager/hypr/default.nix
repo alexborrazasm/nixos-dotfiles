@@ -37,6 +37,7 @@
     pavucontrol
     pamixer
     inputs.hyprdynamicmonitors.packages.${pkgs.system}.default
+    inputs.sunsetr.packages.${pkgs.system}.sunsetr
   ];
 
   services.network-manager-applet.enable = true;

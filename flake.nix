@@ -12,6 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprdynamicmonitors.url = "github:fiffeek/hyprdynamicmonitors";
+    sunsetr.url = "github:psi4j/sunsetr";
   };
 
   outputs = inputs @ {
@@ -20,6 +21,7 @@
     home-manager,
     stylix,
     hyprdynamicmonitors,
+    sunsetr,
     ...
   }: {
     nixosConfigurations = {
