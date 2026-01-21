@@ -12,7 +12,11 @@
     ../../modules/home-manager/starship
     ../../modules/home-manager/firefox
     ../../modules/home-manager/utils
+    ../../modules/home-manager/eden-emu
   ];
+  
+  # Set default terminal
+  home.sessionVariables.TERMINAL = "alacritty";
   
   home.packages = with pkgs; [
     discord

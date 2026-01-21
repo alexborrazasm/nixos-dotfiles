@@ -94,6 +94,9 @@
 
       # Don't consider certain characters part of the word
       WORDCHARS=''${WORDCHARS//\/[&.;]}
+      
+      # Force TERM to xterm-256color
+      export TERM="xterm-256color"
     '';
 
   };

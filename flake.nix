@@ -13,6 +13,7 @@
     };
     hyprdynamicmonitors.url = "github:fiffeek/hyprdynamicmonitors";
     sunsetr.url = "github:psi4j/sunsetr";
+    eden.url = "github:grantimatter/eden-flake";
   };
 
   outputs = inputs @ {
@@ -49,6 +50,7 @@
                 imports = [
                   ./homes/${username}/home.nix
                   stylix.homeModules.stylix
+                  inputs.eden.homeModules.default
                 ];
               };
             }

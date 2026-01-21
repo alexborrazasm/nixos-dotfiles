@@ -51,7 +51,5 @@
     };
   };
 
-  # Ensure kitty is default terminal
-  home.sessionVariables.TERMINAL = "kitty";
 }
 
