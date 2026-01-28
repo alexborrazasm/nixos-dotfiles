@@ -12,14 +12,10 @@
     ../alacritty
     ../wofi
     ../swaync
-    ../nautilus
     ../sunsetr
   ];
 
   wayland.windowManager.hyprland.enable = true;
-
-  # Avoid conflicts with UWSM
-  wayland.windowManager.hyprland.systemd.enable = false;
 
   programs.hyprlock.enable = true;
   services.hypridle.enable = true;
@@ -38,10 +34,10 @@
     pavucontrol
     pamixer
     inputs.hyprdynamicmonitors.packages.${pkgs.system}.default
+    nautilus
+    hyprpaper
+    hypridle
   ];
-  
-  services.network-manager-applet.enable = true;
-  services.blueman-applet.enable = true;
 
   # Style using stylix colors
   home.file.".config/hypr/theme.conf".text = ''

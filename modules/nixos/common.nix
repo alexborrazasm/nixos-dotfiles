@@ -12,13 +12,21 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    promptInit = ''
+      autoload -U colors && colors
+      autoload -U promptinit && promptinit
+
+      if [ "$UID" -eq 0 ]; then
+        # [root@host ~]# 
+        PROMPT="%B%{$fg[red]%}[%n@%m:%~]#%{$reset_color%}%b "
+      fi
+    '';
     shellAliases = {
-      # lsd
-      l   = "lsd --group-dirs=first";
-      ll  = "lsd -lh --group-dirs=first";
-      la  = "lsd -a --group-dirs=first";
-      lla = "lsd -lha --group-dirs=first";
-      ls  = "lsd --group-dirs=first";
+      l   = "eza --group-directories-first";
+      ll  = "eza -lh --group-directories-first";
+      la  = "eza -a --group-directories-first";
+      lla = "eza -lha --group-directories-first";
+      ls  = "eza --group-directories-first";
       
       # bat
       cat = "bat -pP";
@@ -32,10 +40,6 @@
       ncgk = "sudo nix-collect-garbage -d";
       nfu  = "nix flake update";
       nrs  = "sudo nixos-rebuild switch";
-      nsh  = "nix shell";
-      nsp  = "nix-shell -p "; # <package>
-      nrun = "nix run";
-      ndev = "nix develop";
 
       neofetch = "fastfetch";
     };
@@ -47,6 +51,26 @@
     description = username;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+  };
+  
+  nix.settings = {
+    trusted-users = [ username ];
+    substituters = [
+      "https://nix-community.cachix.org"
+      "https://hyprland.cachix.org"
+      "https://eden-flake.cachix.org"
+    ];
+    trusted-substituters = [
+      "https://nix-community.cachix.org"
+      "https://hyprland.cachix.org"
+      "https://eden-flake.cachix.org"
+    ];
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "eden-flake.cachix.org-1:9orwA5vFfBgb67pnnpsxBqILQlb2UI2grWt4zHHAxs8="
+    ];
+
   };
 
   users.users.root = {
@@ -102,16 +126,13 @@
     git
     lm_sensors # for `sensors` command
     fastfetch
-    lsd
+    eza        # ls replacement
+    fd         # find replacement
+    ripgrep    # grep replacement
     bat
   ];
 
   # Set the default editor to vim
   environment.variables.EDITOR = "nvim";
 
-  programs.seahorse.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login.enableGnomeKeyring = true;
-
-  services.dbus.packages = [ pkgs.gnome-keyring pkgs.gcr ];
 }

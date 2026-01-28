@@ -25,12 +25,18 @@
     nmap
     traceroute
     net-tools
+    tcpdump
+    inetutils
 
     # misc
     tree
     bat
-    lsd # A modern replacement for ‘ls’
     rlwrap
+    lsd        # ls replacement
+    bat        # cat replacement
+    fd         # find replacement
+    ripgrep    # grep replacement
+    dust       # du replacement
 
     htop
     btop  # replacement of htop/nmon
@@ -49,6 +55,9 @@
     pciutils # lspci
     usbutils # lsusb
     numactl
+    
+    # TUI for imaging disks.
+    caligula
   ];
 
 }

@@ -6,7 +6,6 @@
   
   programs.eden = {
     enable = true;
-    enableCache = true;
   };
 
 }

@@ -12,7 +12,8 @@
       ../../modules/nixos/docker-rootless.nix
       ../../modules/nixos/embedded_dev.nix
       ../../modules/nixos/printer.nix
-      ../../modules/nixos/udisks2.nix
+      ../../modules/nixos/tailscale.nix
+      ../../modules/nixos/virtualbox.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -56,7 +57,7 @@
     # Enable "Silent Boot"
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelPackages = pkgs.linuxPackages_zen; # use zen kernel
+    #kernelPackages = pkgs.linuxPackages_zen; # use zen kernel
     kernelParams = [
       "quiet"
       "splash"
@@ -65,6 +66,7 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "kvm.enable_virt_at_load=0"
     ];
   };
 
@@ -103,6 +105,11 @@
     #  { from = 8000; to = 8010; }
     #];
   };
+  
+  # To manage screen brightness without sudo
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

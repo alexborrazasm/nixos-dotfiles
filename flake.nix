@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +20,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     stylix,
     hyprdynamicmonitors,
@@ -28,10 +30,9 @@
     nixosConfigurations = {
       zen = let
         username = "alex";
-        specialArgs = { inherit username; };
+        specialArgs = { inherit username nixpkgs-stable; };
       in
         nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
           inherit specialArgs;
 
           modules = [
@@ -42,10 +43,10 @@
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
 
-              #home-manager.extraSpecialArgs = inputs // specialArgs;
               home-manager.extraSpecialArgs = {
                 inherit inputs username;
               };
+
               home-manager.users.${username} = {
                 imports = [
                   ./homes/${username}/home.nix

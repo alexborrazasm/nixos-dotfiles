@@ -75,6 +75,7 @@
       ndev = "nix develop";
 
       neofetch = "fastfetch";
+      grep = "rg";
     };
 
     initContent = ''
