@@ -1,6 +1,7 @@
 { 
   config, 
   pkgs, 
+  username,
   ... 
 }: {
   imports =
@@ -14,6 +15,7 @@
       ../../modules/nixos/printer.nix
       ../../modules/nixos/tailscale.nix
       ../../modules/nixos/virtualbox.nix
+      ../../modules/nixos/neovim.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -69,6 +71,16 @@
       "kvm.enable_virt_at_load=0"
     ];
   };
+  
+  programs.zsh.enable = true;
+  
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.${username} = {
+    isNormalUser = true;
+    description = username;
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+  };
 
   networking.hostName = "zen";
 
@@ -105,6 +117,9 @@
     #  { from = 8000; to = 8010; }
     #];
   };
+
+  # Enable the dynamic library loader for unpatched binaries
+  programs.nix-ld.enable = true;
   
   # To manage screen brightness without sudo
   services.udev.extraRules = ''

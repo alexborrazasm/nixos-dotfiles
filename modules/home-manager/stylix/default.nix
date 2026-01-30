@@ -5,7 +5,8 @@
   stylix = {
     enable = true;
 
-    image = ./wallpapers/nix-black-4k.png;
+    image = ./wallpapers/train-sideview.png;
+    #image = ./wallpapers/nix-black-4k.png;
     #image = ./wallpapers/ocean_with_cloud.png;
 
     # Use a prebuilt theme from the base16-schemes package

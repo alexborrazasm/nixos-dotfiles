@@ -33,7 +33,7 @@
     playerctl
     pavucontrol
     pamixer
-    inputs.hyprdynamicmonitors.packages.${pkgs.system}.default
+    inputs.hyprdynamicmonitors.packages.${pkgs.stdenv.hostPlatform.system}.default
     nautilus
     hyprpaper
     hypridle

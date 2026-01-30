@@ -7,51 +7,6 @@
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    promptInit = ''
-      autoload -U colors && colors
-      autoload -U promptinit && promptinit
-
-      if [ "$UID" -eq 0 ]; then
-        # [root@host ~]# 
-        PROMPT="%B%{$fg[red]%}[%n@%m:%~]#%{$reset_color%}%b "
-      fi
-    '';
-    shellAliases = {
-      l   = "eza --group-directories-first";
-      ll  = "eza -lh --group-directories-first";
-      la  = "eza -a --group-directories-first";
-      lla = "eza -lha --group-directories-first";
-      ls  = "eza --group-directories-first";
-      
-      # bat
-      cat = "bat -pP";
-      
-      # nvim
-      vi  = "nvim";
-      vim = "nvim";
-      
-      # nixos
-      ncg  = "nix-collect-garbage -d";
-      ncgk = "sudo nix-collect-garbage -d";
-      nfu  = "nix flake update";
-      nrs  = "sudo nixos-rebuild switch";
-
-      neofetch = "fastfetch";
-    };
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
-    isNormalUser = true;
-    description = username;
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-  };
   
   nix.settings = {
     trusted-users = [ username ];
@@ -74,11 +29,8 @@
   };
 
   users.users.root = {
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
-
-  # Enable the dynamic library loader for unpatched binaries
-  programs.nix-ld.enable = true;
 
   # do garbage collection weekly to keep disk usage low
   nix.gc = {
@@ -120,19 +72,69 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+    nano # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+
+    # core
     curl
-    git
-    lm_sensors # for `sensors` command
-    fastfetch
+    wget
+    gitMinimal
+    rsync
+    tree
+
+    # monitoring
+    htop
+    btop
+    iotop
+    iftop
+    strace
+    ltrace
+    lsof
+
+    # modern replacements
     eza        # ls replacement
+    bat        # cat replacement
     fd         # find replacement
     ripgrep    # grep replacement
-    bat
+    dust       # du replacement
+
+    # archives
+    zip
+    xz
+    unzip
+    p7zip
+    unrar
+
+    # networking tools
+    dnsutils  # `dig` + `nslookup`
+    nmap
+    traceroute
+    net-tools
+    tcpdump
+    socat
+    inetutils
+
+    # misc
+    rlwrap
+    fastfetch
+    lm_sensors # for `sensors` command
+
+    tmux
   ];
 
-  # Set the default editor to vim
-  environment.variables.EDITOR = "nvim";
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.shellAliases = {
+    l   = "eza --group-directories-first -g";
+    ll  = "eza -l --group-directories-first -g";
+    la  = "eza -a --group-directories-first -g";
+    lla = "eza -la --group-directories-first -g";
+    ls  = "eza --group-directories-first -g";
+    cat = "bat -pP";
+    neofetch = "fastfetch";
+    ncg  = "nix-collect-garbage -d";
+    ncgk = "sudo nix-collect-garbage -d";
+    nfu  = "nix flake update";
+    nrs  = "sudo nixos-rebuild switch";
+  };
 
 }

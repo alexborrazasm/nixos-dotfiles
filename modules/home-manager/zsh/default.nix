@@ -69,13 +69,8 @@
       ncgk = "sudo nix-collect-garbage -d";
       nfu  = "nix flake update";
       nrs  = "sudo nixos-rebuild switch";
-      nsh  = "nix shell";
-      nsp  = "nix-shell -p "; # <package>
-      nrun = "nix run";
-      ndev = "nix develop";
 
       neofetch = "fastfetch";
-      grep = "rg";
     };
 
     initContent = ''

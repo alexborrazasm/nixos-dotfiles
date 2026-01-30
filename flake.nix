@@ -15,6 +15,11 @@
     hyprdynamicmonitors.url = "github:fiffeek/hyprdynamicmonitors";
     sunsetr.url = "github:psi4j/sunsetr";
     eden.url = "github:grantimatter/eden-flake";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = inputs @ {
@@ -25,6 +30,7 @@
     stylix,
     hyprdynamicmonitors,
     sunsetr,
+    disko,
     ...
   }: {
     nixosConfigurations = {
@@ -57,25 +63,37 @@
             }
           ];
         };
+      frontend = let
+        username = "alex";
+        specialArgs = { inherit username nixpkgs-stable; };
+      in
+        nixpkgs-stable.lib.nixosSystem {
+          inherit specialArgs;
+
+          modules = [
+            disko.nixosModules.disko
+            ./hosts/frontend
+          ];
+        };
     };
     
-    homeConfigurations = {
-      wsl = let
-        username = "alex";
-        system = "x86_64-linux";
-        specialArgs = { inherit username; };
-      in
-        home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-
-        extraSpecialArgs = inputs // specialArgs;
-
-        modules = [
-          ./homes/${username}-wsl/home.nix
-          stylix.homeModules.stylix
-        ];
-      };
-    };
-  };
+#    homeConfigurations = {
+#      wsl = let
+#        username = "alex";
+#        system = "x86_64-linux";
+#        specialArgs = { inherit username; };
+#      in
+#        home-manager.lib.homeManagerConfiguration {
+#        pkgs = nixpkgs.legacyPackages.${system};
+#
+#        extraSpecialArgs = inputs // specialArgs;
+#
+#        modules = [
+#          ./homes/${username}-wsl/home.nix
+#          stylix.homeModules.stylix
+#        ];
+#      };
+#    };
+ };
 
 }
