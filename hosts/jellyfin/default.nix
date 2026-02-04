@@ -14,12 +14,25 @@
     ../../modules/nixos/server-users.nix
     ../../modules/nixos/ssh.nix
     ../../modules/nixos/fail2ban.nix
-    ../../modules/nixos/docker.nix
     ../../modules/nixos/neovim.nix
+    ../../modules/nixos/intel-vgpu.nix
   ];
   
+  # Enable jellyfin
+  services.jellyfin.enable = true;
+  networking.firewall.allowedTCPPorts = [ 8096 ];
+
+  # Enable NFS
+  services.rpcbind.enable = true; 
+  # Jellyfin data
+  fileSystems."/media/jellyfin" = {
+    device = "10.10.10.1:/tankhdd/media/jellyfin";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "soft" "timeo=100" ];
+  };
+  
   # Set hostname
-  networking.hostName = "frontend";
+  networking.hostName = "jellyfin";
   
   services.qemuGuest.enable = true;
   
@@ -35,22 +48,7 @@
   environment.systemPackages = with pkgs; [
     cloud-utils
   ];
-
-  # Enable NFS
-  services.rpcbind.enable = true; 
-  # Jellyfin data
-  fileSystems."/media/jellyfin" = {
-    device = "10.10.10.1:/tankhdd/media/jellyfin";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "soft" "timeo=100" ];
-  };
-  # Nextcloud data
-  fileSystems."/media/nextcloud" = {
-    device = "10.10.10.1:/tankssd/media/nextcloud";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "soft" "timeo=100" ];
-  };
-
+  
   swapDevices = [
     {
       device = "/swapfile";

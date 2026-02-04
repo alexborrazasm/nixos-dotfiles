@@ -19,7 +19,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    intel-sriov = {
+      url = "github:strongtz/i915-sriov-dkms";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -31,6 +34,7 @@
     hyprdynamicmonitors,
     sunsetr,
     disko,
+    intel-sriov,
     ...
   }: {
     nixosConfigurations = {
@@ -73,6 +77,33 @@
           modules = [
             disko.nixosModules.disko
             ./hosts/frontend
+          ];
+        };
+      jellyfin = let
+        username = "alex";
+        specialArgs = { inherit username nixpkgs-stable; };
+      in
+        nixpkgs-stable.lib.nixosSystem {
+          inherit specialArgs;
+
+          modules = [
+            disko.nixosModules.disko
+            intel-sriov.nixosModules.default
+            ./hosts/jellyfin
+          ];
+        };
+
+      iot = let
+        username = "alex";
+        specialArgs = { inherit username nixpkgs-stable; };
+      in
+        nixpkgs-stable.lib.nixosSystem {
+          inherit specialArgs;
+
+          modules = [
+            disko.nixosModules.disko
+            intel-sriov.nixosModules.default
+            ./hosts/iot
           ];
         };
     };

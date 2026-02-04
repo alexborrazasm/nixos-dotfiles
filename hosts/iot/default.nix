@@ -16,10 +16,11 @@
     ../../modules/nixos/fail2ban.nix
     ../../modules/nixos/docker.nix
     ../../modules/nixos/neovim.nix
+    ../../modules/nixos/intel-vgpu.nix
   ];
   
   # Set hostname
-  networking.hostName = "frontend";
+  networking.hostName = "iot";
   
   services.qemuGuest.enable = true;
   
@@ -35,22 +36,16 @@
   environment.systemPackages = with pkgs; [
     cloud-utils
   ];
-
+  
   # Enable NFS
   services.rpcbind.enable = true; 
-  # Jellyfin data
-  fileSystems."/media/jellyfin" = {
-    device = "10.10.10.1:/tankhdd/media/jellyfin";
+  # Frigate data data
+  fileSystems."/media/frigate" = {
+    device = "10.10.10.1:/tank1tb/frigate";
     fsType = "nfs";
     options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "soft" "timeo=100" ];
   };
-  # Nextcloud data
-  fileSystems."/media/nextcloud" = {
-    device = "10.10.10.1:/tankssd/media/nextcloud";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "soft" "timeo=100" ];
-  };
-
+  
   swapDevices = [
     {
       device = "/swapfile";

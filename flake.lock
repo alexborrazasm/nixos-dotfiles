@@ -254,6 +254,26 @@
         "type": "github"
       }
     },
+    "intel-sriov": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769529758,
+        "narHash": "sha256-mkA6kUx9yakScjsFvSX5xXCah7r1u43dk4QrckADnmk=",
+        "owner": "strongtz",
+        "repo": "i915-sriov-dkms",
+        "rev": "7189414e2153186673806628c6ff433170a90d82",
+        "type": "github"
+      },
+      "original": {
+        "owner": "strongtz",
+        "repo": "i915-sriov-dkms",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1759381078,
@@ -365,6 +385,7 @@
         "eden": "eden",
         "home-manager": "home-manager",
         "hyprdynamicmonitors": "hyprdynamicmonitors",
+        "intel-sriov": "intel-sriov",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
         "stylix": "stylix",

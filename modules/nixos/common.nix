@@ -117,6 +117,7 @@
     rlwrap
     fastfetch
     lm_sensors # for `sensors` command
+    fio
 
     tmux
   ];
