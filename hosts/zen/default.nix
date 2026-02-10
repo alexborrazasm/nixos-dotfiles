@@ -2,24 +2,30 @@
   config, 
   pkgs, 
   username,
+  lib,
   ... 
-}: {
-  imports =
-    [
-      ../../modules/nixos/common.nix
-      ../../modules/nixos/hypr.nix
-      ../../modules/nixos/fonts.nix
-      ../../modules/nixos/solaar.nix # Logitech G733 control
-      ../../modules/nixos/docker-rootless.nix
-      ../../modules/nixos/embedded_dev.nix
-      ../../modules/nixos/printer.nix
-      ../../modules/nixos/tailscale.nix
-      ../../modules/nixos/virtualbox.nix
-      ../../modules/nixos/neovim.nix
+}: 
 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+let 
+  session = "start-hyprland > /dev/null";
+in
+{
+  imports = [
+    ../../modules/nixos/common.nix
+    ../../modules/nixos/hypr.nix
+    ../../modules/nixos/fonts.nix
+    ../../modules/nixos/solaar.nix # Logitech G733 control
+    ../../modules/nixos/docker-rootless.nix
+    ../../modules/nixos/embedded_dev.nix
+    ../../modules/nixos/printer.nix
+    ../../modules/nixos/tailscale.nix
+    ../../modules/nixos/virtualbox.nix
+    ../../modules/nixos/neovim.nix
+    ../../modules/nixos/tuigreet-autounlock.nix { inherit session; }
+
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
  
   # Bootloader
   boot = {
