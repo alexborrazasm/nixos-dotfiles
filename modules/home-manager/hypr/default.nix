@@ -37,6 +37,13 @@
     nautilus
     hyprpaper
     hypridle
+    vlc
+    loupe
+    gnome-text-editor
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en_US
+    hunspellDicts.es_ES
   ];
 
   # Style using stylix colors

@@ -11,7 +11,7 @@ let
   
   # Theme colors and spacing
   containerColor = "darkgray";
-  borderColor = "lightblue";
+  borderColor = "cyan";
   containerPadding = "3";
   timeFormat = "'%I:%M %p | %a • %h | %F'";
   

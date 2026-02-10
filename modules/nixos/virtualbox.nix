@@ -15,4 +15,9 @@
   };
 
   users.extraGroups.vboxusers.members = [ username ];
+
+  # EII lab
+  environment.systemPackages = [
+    pkgs.vagrant
+  ];
 }

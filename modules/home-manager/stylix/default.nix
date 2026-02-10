@@ -59,8 +59,8 @@
     };
 
     cursor = {
-      package = pkgs.catppuccin-cursors.mochaDark;
-      name = "Catppuccin-Mocha-Dark-Cursors";
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
       size = 24;
     };
 

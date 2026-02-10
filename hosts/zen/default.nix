@@ -2,13 +2,9 @@
   config, 
   pkgs, 
   username,
-  lib,
   ... 
 }: 
 
-let 
-  session = "start-hyprland > /dev/null";
-in
 {
   imports = [
     ../../modules/nixos/common.nix
@@ -21,7 +17,7 @@ in
     ../../modules/nixos/tailscale.nix
     ../../modules/nixos/virtualbox.nix
     ../../modules/nixos/neovim.nix
-    ../../modules/nixos/tuigreet-autounlock.nix { inherit session; }
+    ../../modules/nixos/tuigreet-autounlock.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix

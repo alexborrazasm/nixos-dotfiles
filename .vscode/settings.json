@@ -2,6 +2,7 @@
   "cSpell.words": [
     "Adison",
     "alexborrazasm",
+    "amdgpu",
     "Artix",
     "autocd",
     "autologin",
@@ -26,6 +27,7 @@
     "Cavani",
     "cliphist",
     "compinit",
+    "coreutils",
     "darkgray",
     "dbus",
     "define-color",
@@ -166,6 +168,7 @@
     "sunsetr",
     "suppressevent",
     "swapfile",
+    "swayimg",
     "swaync",
     "swaynotificationcenter",
     "switchxkblayout",

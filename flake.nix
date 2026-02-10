@@ -40,7 +40,8 @@
     nixosConfigurations = {
       zen = let
         username = "alex";
-        specialArgs = { inherit username nixpkgs-stable; };
+        session = "start-hyprland > /dev/null";
+        specialArgs = { inherit username session nixpkgs-stable; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
