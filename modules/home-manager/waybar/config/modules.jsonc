@@ -44,8 +44,14 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}   {capacity: >3}%",
-    "format-icons": ["", "", "", "", ""]
+    "format": "{icon} {capacity: >3}%",
+    "format-charging": " {icon} {capacity: >3}%",
+    "format-plugged": " {capacity: >3}%",
+    "format-full": "󰁹 full",
+    "format-icons": [
+      "󰂎", "󰁺", "󰁻", "󰁼", "󰁽",
+      "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+    ]
   },
 
   // Language (Hyprland)
@@ -86,7 +92,7 @@
   "clock": {
     "format": "  {:%H:%M %a %d}",
     "format-alt": "  {:%d/%m/%Y  %H:%M:%S}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,

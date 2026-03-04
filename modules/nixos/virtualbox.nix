@@ -19,5 +19,14 @@
   # EII lab
   environment.systemPackages = [
     pkgs.vagrant
+    (pkgs.makeDesktopItem {
+      name = "virtualbox";
+      desktopName = "Oracle VM VirtualBox";
+      exec = "env XDG_CURRENT_DESKTOP=GNOME VirtualBox %U";
+      icon = "virtualbox";
+      categories = [ "System" "Emulator" ];
+      terminal = false;
+    })
   ];
+
 }

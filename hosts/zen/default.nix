@@ -11,7 +11,7 @@
     ../../modules/nixos/hypr.nix
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/solaar.nix # Logitech G733 control
-    ../../modules/nixos/docker-rootless.nix
+    ../../modules/nixos/docker-desktop.nix
     ../../modules/nixos/embedded_dev.nix
     ../../modules/nixos/printer.nix
     ../../modules/nixos/tailscale.nix
