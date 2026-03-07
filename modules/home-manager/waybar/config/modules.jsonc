@@ -46,8 +46,8 @@
     },
     "format": "{icon} {capacity: >3}%",
     "format-charging": " {icon} {capacity: >3}%",
-    "format-plugged": " {capacity: >3}%",
-    "format-full": "󰁹 full",
+    "format-plugged": " plugged",
+    "format-full": " plugged",
     "format-icons": [
       "󰂎", "󰁺", "󰁻", "󰁼", "󰁽",
       "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
