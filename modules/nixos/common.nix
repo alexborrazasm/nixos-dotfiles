@@ -26,6 +26,10 @@
       "eden-flake.cachix.org-1:9orwA5vFfBgb67pnnpsxBqILQlb2UI2grWt4zHHAxs8="
     ];
 
+    max-jobs = "auto";
+    cores = 0;
+    auto-optimise-store = true;
+
   };
 
   users.users.root = {

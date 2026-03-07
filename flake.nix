@@ -36,10 +36,17 @@
     disko,
     intel-sriov,
     ...
-  }: {
+  }: let
+    username = "alex";
+    system = "x86_64-linux";
+    homeModules = [
+      ./homes/${username}/home.nix
+      stylix.homeModules.stylix
+      inputs.eden.homeModules.default
+    ];
+  in {
     nixosConfigurations = {
       zen = let
-        username = "alex";
         session = "start-hyprland > /dev/null";
         specialArgs = { inherit username session nixpkgs-stable; };
       in
@@ -59,17 +66,12 @@
               };
 
               home-manager.users.${username} = {
-                imports = [
-                  ./homes/${username}/home.nix
-                  stylix.homeModules.stylix
-                  inputs.eden.homeModules.default
-                ];
+                imports = homeModules;
               };
             }
           ];
         };
       frontend = let
-        username = "alex";
         specialArgs = { inherit username nixpkgs-stable; };
       in
         nixpkgs-stable.lib.nixosSystem {
@@ -81,7 +83,6 @@
           ];
         };
       jellyfin = let
-        username = "alex";
         specialArgs = { inherit username nixpkgs-stable; };
       in
         nixpkgs-stable.lib.nixosSystem {
@@ -95,7 +96,6 @@
         };
 
       iot = let
-        username = "alex";
         specialArgs = { inherit username nixpkgs-stable; };
       in
         nixpkgs-stable.lib.nixosSystem {
@@ -108,24 +108,14 @@
           ];
         };
     };
-    
-#    homeConfigurations = {
-#      wsl = let
-#        username = "alex";
-#        system = "x86_64-linux";
-#        specialArgs = { inherit username; };
-#      in
-#        home-manager.lib.homeManagerConfiguration {
-#        pkgs = nixpkgs.legacyPackages.${system};
-#
-#        extraSpecialArgs = inputs // specialArgs;
-#
-#        modules = [
-#          ./homes/${username}-wsl/home.nix
-#          stylix.homeModules.stylix
-#        ];
-#      };
-#    };
+
+    homeConfigurations = {
+      ${username} = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = { inherit inputs username; };
+        modules = homeModules;
+      };
+    };
  };
 
 }

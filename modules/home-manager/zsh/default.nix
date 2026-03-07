@@ -1,6 +1,7 @@
 { 
   config, 
   pkgs, 
+  username,
   ... 
 }: {
 
@@ -69,6 +70,7 @@
       ncgk = "sudo nix-collect-garbage -d";
       nfu  = "nix flake update";
       nrs  = "sudo nixos-rebuild switch";
+      hms  = "home-manager switch --flake ~/nixos-config#${username}";
 
       neofetch = "fastfetch";
     };
