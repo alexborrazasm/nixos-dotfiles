@@ -4,11 +4,10 @@
   username,
   ...
 }: {
-
-  # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   nix.settings = {
+    # Enable the Flakes feature and the accompanying new nix command-line tool
+    experimental-features = [ "nix-command" "flakes" ];
     trusted-users = [ username ];
     substituters = [
       "https://nix-community.cachix.org"

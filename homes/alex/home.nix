@@ -24,6 +24,10 @@
     vscode
     evince
   ];
+  
+  programs.chromium = {
+    enable = true;
+  };
 
   # basic configuration of git
   programs.git = {
