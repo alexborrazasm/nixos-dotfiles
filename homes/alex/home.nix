@@ -15,8 +15,11 @@
     ../../modules/home-manager/eden-emu
   ];
   
-  # Set default terminal
-  home.sessionVariables.TERMINAL = "alacritty";
+  # Set default terminal and browser
+  home.sessionVariables = {
+    BROWSER = "firefox";
+    TERMINAL = "alacritty";
+  };
   
   home.packages = with pkgs; [
     discord
@@ -27,6 +30,21 @@
   
   programs.chromium = {
     enable = true;
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
+      "application/pdf" = [ "org.gnome.Evince.desktop" ];
+      "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+      "image/png" = [ "org.gnome.Loupe.desktop" ];
+      "video/mp4" = [ "vlc.desktop" ];
+      "video/x-matroska" = [ "vlc.desktop" ];
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+      "x-scheme-handler/http" = [ "firefox.desktop" ];
+      "x-scheme-handler/https" = [ "firefox.desktop" ];
+    };
   };
 
   # basic configuration of git

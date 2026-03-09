@@ -218,5 +218,8 @@
     "zstd",
     "zstyle"
   ],
-  "cSpell.enabled": true
+  "cSpell.enabled": true,
+  "cSpell.ignorePaths": [
+    "flake.lock"
+  ]
 }
