@@ -124,6 +124,8 @@
     fio
 
     tmux
+    
+    perf
   ];
 
   # List packages installed in system profile. To search, run:

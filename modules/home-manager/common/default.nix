@@ -10,13 +10,13 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 
-  home.packages = [
-    pkgs.home-manager
+  home.packages = with pkgs; [
+    home-manager
   ];
 
   news.display = "silent";

@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [
       numpy
+      ipython
       dbus-python
     ]))
     
@@ -58,6 +59,9 @@
     
     # TUI for imaging disks.
     caligula
+    
+    # Generate Nix packages from URLs
+    nix-init
   ];
 
 }
